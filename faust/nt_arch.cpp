@@ -270,7 +270,7 @@ void	parameterChanged( _NT_algorithm* self, int p )
 {
 	_fauseAlgorithm* pThis = (_fauseAlgorithm*)self;
 	
-	if ( p >= kParamFirstInput )
+	if ( (uint32_t)p >= kParamFirstInput )
 		return;
 	
 	float v = pThis->v[ p ];
