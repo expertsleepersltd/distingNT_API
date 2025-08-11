@@ -499,6 +499,12 @@ void		NT_setParameterFromUi( uint32_t algorithmIndex, uint32_t parameter, int16_
 // Typically used as e.g. NT_setParameterFromUi( NT_algorithmIndex(self), param + NT_parameterOffset(), value ).
 uint32_t	NT_parameterOffset(void);
 
+/*
+ * Call to let the host know that the indexed parameter definition has changed.
+ * i.e. self->parameters[ parameterIndex ] has been modified.
+ */
+void		NT_updateParameterDefinition( uint32_t algorithmIndex, uint32_t parameterIndex );
+
 // drawing - use from within draw() only
 //
 
