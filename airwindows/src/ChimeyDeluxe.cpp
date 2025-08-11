@@ -1,9 +1,9 @@
 #include <math.h>
 #include <new>
 #include <distingnt/api.h>
-#define AIRWINDOWS_NAME "PointyDeluxe"
-#define AIRWINDOWS_DESCRIPTION "Devours all mix space."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','j' )
+#define AIRWINDOWS_NAME "ChimeyDeluxe"
+#define AIRWINDOWS_DESCRIPTION "ChimeyDeluxe"
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','i' )
 #define AIRWINDOWS_KERNELS
 enum {
 
@@ -50,15 +50,13 @@ struct _kernel {
 	float GetParameter( int index ) { return owner->GetParameter( index ); }
 	_airwindowsAlgorithm* owner;
  
-		float angS[18][16];
-		float angA[18][16];
-		float angG[16];
+		float angS[18][15];
+		float angA[18][15];
+		float angG[15];
 		
-		float lastSample;
-		float intermediate[16];
-		bool wasPosClip;
-		bool wasNegClip;
-
+		float muComp;
+		float muSpd;
+				
 		uint32_t fpd;
 	
 	struct _dram {
@@ -81,51 +79,49 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 	
 	float drive = 1.0f;
 	float pad = 1.0f;
-	angG[1] = sqrt(GetParameter( kParam_A )*2.0f);
+	angG[1] = GetParameter( kParam_A )+0.5f;
 	if (pad > angG[1]) pad = angG[1];
 	if (drive < angG[1]) drive = angG[1];
 	angG[0] = (1.0f+angG[1])*0.5f; //if boost, boost half
 	if (angG[0] > angG[1]) angG[0] = angG[1];
-	angG[2] = sqrt(GetParameter( kParam_B )*2.0f);
+	angG[2] = GetParameter( kParam_B )+0.5f;
 	if (pad > angG[2]) pad = angG[2];
 	if (drive < angG[2]) drive = angG[2];
-	angG[3] = sqrt(GetParameter( kParam_C )*2.0f);
+	angG[3] = GetParameter( kParam_C )+0.5f;
 	if (pad > angG[3]) pad = angG[3];
 	if (drive < angG[3]) drive = angG[3];
-	angG[4] = sqrt(GetParameter( kParam_D )*2.0f);
+	angG[4] = GetParameter( kParam_D )+0.5f;
 	if (pad > angG[4]) pad = angG[4];
 	if (drive < angG[4]) drive = angG[4];
-	angG[5] = sqrt(GetParameter( kParam_E )*2.0f);
+	angG[5] = GetParameter( kParam_E )+0.5f;
 	if (pad > angG[5]) pad = angG[5];
 	if (drive < angG[5]) drive = angG[5];
-	angG[6] = sqrt(GetParameter( kParam_F )*2.0f);
+	angG[6] = GetParameter( kParam_F )+0.5f;
 	if (pad > angG[6]) pad = angG[6];
 	if (drive < angG[6]) drive = angG[6];
-	angG[7] = sqrt(GetParameter( kParam_G )*2.0f);
+	angG[7] = GetParameter( kParam_G )+0.5f;
 	if (pad > angG[7]) pad = angG[7];
 	if (drive < angG[7]) drive = angG[7];
-	angG[8] = sqrt(GetParameter( kParam_H )*2.0f);
+	angG[8] = GetParameter( kParam_H )+0.5f;
 	if (pad > angG[8]) pad = angG[8];
 	if (drive < angG[8]) drive = angG[8];
-	angG[9] = sqrt(GetParameter( kParam_I )*2.0f);
+	angG[9] = GetParameter( kParam_I )+0.5f;
 	if (pad > angG[9]) pad = angG[9];
 	if (drive < angG[9]) drive = angG[9];
-	angG[10] = sqrt(GetParameter( kParam_J )*2.0f);
+	angG[10] = GetParameter( kParam_J )+0.5f;
 	if (pad > angG[10]) pad = angG[10];
 	if (drive < angG[10]) drive = angG[10];
-	angG[11] = 1.0f;
-	angG[12] = 1.0f;
-	pad = sqrt(pad);
-	int poles = (int)(drive*11.0f);
-	float tune = 0.618f+(overallscale*0.0055f);
-	int spacing = floor(overallscale); //should give us working basic scaling, usually 2 or 4
-	if (spacing < 1) spacing = 1; if (spacing > 16) spacing = 16;
+	angG[11] = (angG[10]+1.0f)*0.5f;
+	angG[12] = (angG[11]+1.0f)*0.5f;
+	float tune = 0.618f+(overallscale*0.0055f);	
+	float threshold = 1.0f-(drive*0.23f);
+	float adjSpd = ((drive*120.0f)+50.0f)*overallscale;
 	
 	while (nSampleFrames-- > 0) {
 		float inputSample = *sourceP;
 		if (fabs(inputSample)<1.18e-23f) inputSample = fpd * 1.18e-17f;
-
-		for (int x = 0; x < poles; x++) {
+		
+		for (int x = 0; x < 16; x++) {
 			float fr = (0.92f/overallscale)+(overallscale*0.01f);
 			float band = inputSample; inputSample = 0.0f;
 			for (int y = 0; y < 12; y++) {
@@ -136,31 +132,24 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 				fr *= tune;
 			}
 			inputSample += band;
-			inputSample *= drive;
-			inputSample -= fmin(fmax((inputSample*(fabs(inputSample)*0.654f)*(fabs(inputSample)*0.654f)),-1.0f),1.0f);
+			inputSample *= threshold;
+			inputSample *= (muComp/threshold);
+			if (fabs(inputSample) > threshold)
+			{
+				muComp *= muSpd;
+				if (threshold/fabs(inputSample) < threshold) muComp += threshold*fabs(inputSample);
+				else muComp -= threshold/fabs(inputSample);
+				muComp /= muSpd;
+			} else {
+				muComp *= (muSpd*muSpd);
+				muComp += ((1.1f+threshold)-fabs(inputSample));
+				muComp /= (muSpd*muSpd);
+			}
+			muComp = fmax(fmin(muComp,1.0f),threshold);
+			inputSample *= (muComp*muComp);
+			muSpd = fmax(fmin(((muSpd*(muSpd-1.0f))+(fabs(inputSample*adjSpd)))/muSpd,adjSpd*2.0f),adjSpd);			
 		}
-		
-		if (pad < 1.0f) {
-			inputSample *= pad;
-		}
-
-		//begin ClipOnly2 as a little, compressed chunk that can be dropped into code
-		if (inputSample > 4.0f) inputSample = 4.0f; if (inputSample < -4.0f) inputSample = -4.0f;
-		if (wasPosClip == true) { //current will be over
-			if (inputSample<lastSample) lastSample=0.7058208f+(inputSample*0.2609148f);
-			else lastSample = 0.2491717f+(lastSample*0.7390851f);
-		} wasPosClip = false;
-		if (inputSample>0.9549925859f) {wasPosClip=true;inputSample=0.7058208f+(lastSample*0.2609148f);}
-		if (wasNegClip == true) { //current will be -over
-			if (inputSample > lastSample) lastSample=-0.7058208f+(inputSample*0.2609148f);
-			else lastSample=-0.2491717f+(lastSample*0.7390851f);
-		} wasNegClip = false;
-		if (inputSample<-0.9549925859f) {wasNegClip=true;inputSample=-0.7058208f+(lastSample*0.2609148f);}
-		intermediate[spacing] = inputSample;
-        inputSample = lastSample; //Latency is however many samples equals one 44.1k sample
-		for (int x = spacing; x > 0; x--) intermediate[x-1] = intermediate[x];
-		lastSample = intermediate[0]; //run a little buffer to handle this
-		//end ClipOnly2 as a little, compressed chunk that can be dropped into code	
+		inputSample = sin(fmin(fmax(inputSample*pad,-M_PI_2),M_PI_2));
 		
 		
 		
@@ -177,12 +166,13 @@ void _airwindowsAlgorithm::_kernel::reset(void) {
 			angS[x][y] = 0.0;angA[x][y] = 0.0;
 		}
 	}
-	for(int y=0; y<14; y++) angG[y] = 0.0;
-
-	lastSample = 0.0;
-	wasPosClip = false;
-	wasNegClip = false;
-	for (int x = 0; x < 16; x++) intermediate[x] = 0.0;	
+	for(int y=0; y<14; y++) {
+		angG[y] = 0.0;
+	}
+	
+	muComp = 1.0;
+	muSpd = 100.0;
+	
 	fpd = 1.0; while (fpd < 16386) fpd = rand()*UINT32_MAX;
 }
 };

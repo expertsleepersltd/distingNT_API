@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeCrackle"
-#define AIRWINDOWS_DESCRIPTION "DeCrackle"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','C' )
+#define AIRWINDOWS_DESCRIPTION "Isolates clicks and vinyl crackles to remove them."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','D' )
 enum {
 
 	kParam_A =0,
