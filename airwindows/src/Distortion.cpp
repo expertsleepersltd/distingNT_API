@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Distortion"
 #define AIRWINDOWS_DESCRIPTION "A slightly dark analog-style distortion with several presets, like Focus."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Ditherbox"
 #define AIRWINDOWS_DESCRIPTION "A switchable selection of dithers in 16 and 24 bit, plus monitoring tools."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','#' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','$' )
 #define AIRWINDOWS_KERNELS
 enum {
 

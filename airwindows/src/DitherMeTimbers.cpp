@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DitherMeTimbers"
 #define AIRWINDOWS_DESCRIPTION "Dark deep 'dither' in 24 bit version."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','!' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','#' )
 #define AIRWINDOWS_KERNELS
 enum {
 

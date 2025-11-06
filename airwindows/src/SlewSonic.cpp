@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SlewSonic"
 #define AIRWINDOWS_DESCRIPTION "Combines SlewOnly with ultrasonic filtering to solo brightness."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','j' )
 #define AIRWINDOWS_KERNELS
 enum {
 

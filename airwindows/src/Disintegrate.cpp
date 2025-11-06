@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Disintegrate"
 #define AIRWINDOWS_DESCRIPTION "Discontinuity on steroids."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','u' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

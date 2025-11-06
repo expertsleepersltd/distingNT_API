@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Distance2"
 #define AIRWINDOWS_DESCRIPTION "A versatile space shaper for creating depth."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','w' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

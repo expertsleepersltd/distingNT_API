@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DitherFloat"
 #define AIRWINDOWS_DESCRIPTION "A demo of floating point truncation: can also dither to 32 bit float output."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i',' ' )
 #define AIRWINDOWS_KERNELS
 enum {
 

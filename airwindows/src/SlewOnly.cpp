@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SlewOnly"
 #define AIRWINDOWS_DESCRIPTION "A mix check plugin that shows you only the extreme highs."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','i' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dyno"
 #define AIRWINDOWS_DESCRIPTION "A lot like Mojo, but for intensity instead of loudness."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

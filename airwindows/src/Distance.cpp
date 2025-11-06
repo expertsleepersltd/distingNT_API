@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Distance"
 #define AIRWINDOWS_DESCRIPTION "A sound design or reverb far-away-izer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','v' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

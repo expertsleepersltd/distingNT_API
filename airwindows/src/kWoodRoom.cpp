@@ -1,10 +1,9 @@
 #include <math.h>
 #include <new>
 #include <distingnt/api.h>
-#define AIRWINDOWS_NAME "kAlienSpaceship"
-#define AIRWINDOWS_DESCRIPTION "An unreal realistic reverb."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','A','l' )
-#define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
+#define AIRWINDOWS_NAME "kWoodRoom"
+#define AIRWINDOWS_DESCRIPTION "kWoodRoom"
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','W','o' )
 enum {
 
 	kParam_A =0,
@@ -16,11 +15,11 @@ enum {
 	//Add your parameters here...
 	kNumberOfParameters=6
 };
-const int d3A = 2639; const int d3B = 4367; const int d3C = 4370;
-const int d3D = 2549; const int d3E = 2706; const int d3F = 3376;
-const int d3G = 2029; const int d3H = 2261; const int d3I = 2712;
-const int d6A = 1498; const int d6B = 82; const int d6C = 631; const int d6D = 762; const int d6E = 1241; const int d6F = 79; const int d6G = 821; const int d6H = 1315; const int d6I = 2261; const int d6J = 2029; const int d6K = 108; const int d6L = 2712; const int d6M = 305; const int d6N = 671; const int d6O = 13; const int d6P = 913; const int d6Q = 1999; const int d6R = 600; const int d6S = 826; const int d6T = 3376; const int d6U = 969; const int d6V = 2639; const int d6W = 915; const int d6X = 1173; const int d6Y = 1345; const int d6ZA = 4370; const int d6ZB = 4367; const int d6ZC = 2549; const int d6ZD = 227; const int d6ZE = 696; const int d6ZF = 1332; const int d6ZG = 1503; const int d6ZH = 627; const int d6ZI = 322; const int d6ZJ = 451; const int d6ZK = 2706; //18 to 377 ms, 4660 seat arena  
-const int early[] = {13, 79, 82, 108, 227, 305, 322, 451, 600, 627, 631, 671, 696, 762, 821, 826, 913, 915, 969, 1173, 1241, 1315, 1332, 1345, 1498, 1503, 1999, 2029, 2261, 2549, 2639, 2706, 2712, 3376, 4367, 4370};
+const int d3A = 581; const int d3B = 831; const int d3C = 832;
+const int d3D = 574; const int d3E = 598; const int d3F = 685;
+const int d3G = 499; const int d3H = 573; const int d3I = 655;
+const int d6A = 154; const int d6B = 832; const int d6C = 109; const int d6D = 685; const int d6E = 33; const int d6F = 12; const int d6G = 27; const int d6H = 30; const int d6I = 339; const int d6J = 499; const int d6K = 296; const int d6L = 169; const int d6M = 169; const int d6N = 831; const int d6O = 15; const int d6P = 411; const int d6Q = 238; const int d6R = 68; const int d6S = 0; const int d6T = 8; const int d6U = 655; const int d6V = 581; const int d6W = 465; const int d6X = 173; const int d6Y = 3; const int d6ZA = 96; const int d6ZB = 573; const int d6ZC = 243; const int d6ZD = 30; const int d6ZE = 188; const int d6ZF = 291; const int d6ZG = 11; const int d6ZH = 372; const int d6ZI = 574; const int d6ZJ = 100; const int d6ZK = 598; //1 to 90 ms, 249 seat club  
+const int early[] = {0, 3, 8, 11, 12, 15, 27, 30, 30, 33, 68, 96, 100, 109, 154, 169, 169, 173, 188, 238, 243, 291, 296, 339, 372, 411, 465, 499, 573, 574, 581, 598, 655, 685, 831, 832};
 enum { kParamInputL, kParamInputR, kParamOutputL, kParamOutputLmode, kParamOutputR, kParamOutputRmode,
 kParamPrePostGain,
 kParam0, kParam1, kParam2, kParam3, kParam4, kParam5, };
@@ -34,7 +33,7 @@ NT_PARAMETER_AUDIO_OUTPUT_WITH_MODE( "Output R", 1, 14 )
 { .name = "Pre/post gain", .min = -36, .max = 0, .def = -20, .unit = kNT_unitDb, .scaling = kNT_scalingNone, .enumStrings = NULL },
 { .name = "Regen", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
 { .name = "Derez", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
-{ .name = "Filter", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
+{ .name = "Filter", .min = 0, .max = 1000, .def = 250, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
 { .name = "EarlyRf", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
 { .name = "Positin", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
 { .name = "Dry/Wet", .min = 0, .max = 1000, .def = 500, .unit = kNT_unitNone, .scaling = kNT_scaling1000, .enumStrings = NULL },
@@ -58,7 +57,7 @@ enum { kNumTemplateParameters = 7 };
 	float f6AL,f6BL,f6CL,f6DL,f6EL,f6FL;
 	float f6FR,f6LR,f6RR,f6XR,f6ZER,f6ZKR;
 	float avg6L,avg6R; 
-		
+	
 	enum {
 		bez_AL,
 		bez_AR,
@@ -189,7 +188,7 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 	overallscale *= GetSampleRate();
 	
 	float fdb6ck = (0.0009765625f+0.0009765625f+0.001953125f)*0.3333333f;
-	float reg6n = (1.0f-powf(1.0f-GetParameter( kParam_A ),3.0f))*fdb6ck;
+	float reg6n = (1.0f-powf(1.0f-GetParameter( kParam_A ),1.618033988749894f))*fdb6ck;
 	//start this but pad it in the loop by volume of output?
 	
 	float derez = GetParameter( kParam_B )*2.0f;
@@ -225,7 +224,7 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		bezFreqTrim = 1.0f-powf(derezFreq*0.5f,1.0f/(derezFreq*0.5f));
 	} //the revision more accurately connects the bezier curves
 	
-	float earlyLoudness = GetParameter( kParam_D );
+	float earlyLoudness = GetParameter( kParam_D )*2.0f;
 	int start = (int)(GetParameter( kParam_E ) * 27.0f);
 	int ld3G = early[start]; 
 	int ld3H = early[start+1]; 
@@ -253,7 +252,7 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		if (dram->bez[bez_cycle] > 1.0f) { //hit the end point and we do a reverb sample
 			if (stepped) dram->bez[bez_cycle] = 0.0f;
 			else dram->bez[bez_cycle] -= 1.0f;
-						
+			
 			inputSampleL = (dram->bez[bez_SampL]+dram->bez[bez_AvgInSampL])*0.5f;
 			dram->bez[bez_AvgInSampL] = dram->bez[bez_SampL];
 			inputSampleR = (dram->bez[bez_SampR]+dram->bez[bez_AvgInSampR])*0.5f;
@@ -325,7 +324,7 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 			
 			float inputSampleL = (o3GL + o3HL + o3IL)*0.03125f;
 			float inputSampleR = (o3AR + o3DR + o3GR)*0.03125f;
-			
+						
 			dram->bezF[bez_cycle] += derezFreq;
 			dram->bezF[bez_SampL] += ((inputSampleL+dram->bezF[bez_InL]) * derezFreq);
 			dram->bezF[bez_SampR] += ((inputSampleL+dram->bezF[bez_InR]) * derezFreq);
@@ -345,18 +344,18 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 			float X = dram->bezF[bez_cycle]*bezFreqTrim;
 			float CBLfreq = (dram->bezF[bez_CL]*(1.0f-X))+(dram->bezF[bez_BL]*X);
 			float BALfreq = (dram->bezF[bez_BL]*(1.0f-X))+(dram->bezF[bez_AL]*X);
-			float CBALfreq = (dram->bezF[bez_BL]+(CBLfreq*(1.0f-X))+(BALfreq*X))*0.0625f;
+			float CBALfreq = (dram->bezF[bez_BL]+(CBLfreq*(1.0f-X))+(BALfreq*X))*0.125f;
 			float CBRfreq = (dram->bezF[bez_CR]*(1.0f-X))+(dram->bezF[bez_BR]*X);
 			float BARfreq = (dram->bezF[bez_BR]*(1.0f-X))+(dram->bezF[bez_AR]*X);
-			float CBARfreq = (dram->bezF[bez_BR]+(CBRfreq*(1.0f-X))+(BARfreq*X))*0.0625f;
+			float CBARfreq = (dram->bezF[bez_BR]+(CBRfreq*(1.0f-X))+(BARfreq*X))*0.125f;
 			inputSampleL = CBALfreq+dram->bezF[bez_AvgOutSampL];
 			dram->bezF[bez_AvgOutSampL] = CBALfreq;
 			inputSampleR = CBARfreq+dram->bezF[bez_AvgOutSampR];
 			dram->bezF[bez_AvgOutSampR] = CBARfreq;
 			
 			float earlyReflectionL = inputSampleL;
-			float earlyReflectionR = inputSampleR; //for more alienness, early reflections are DeRezzed
-						
+			float earlyReflectionR = inputSampleR; //kWoodRoom has filtered early reflections
+			
 			dram->a6AL[c6AL] = inputSampleL + (f6BL * reg6n);
 			dram->a6BL[c6BL] = inputSampleL + (f6CL * reg6n);
 			dram->a6CL[c6CL] = inputSampleL + (f6DL * reg6n);
@@ -638,8 +637,8 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 			inputSampleL = (o6ZFL + o6ZGL + o6ZHL + o6ZIL + o6ZJL + o6ZKL)*0.001953125f;
 			inputSampleR = (o6AR + o6GR + o6MR + o6SR + o6YR + o6ZFR)*0.001953125f;
 			
-			f6AL = (f6AL+f6AL+f6AL+fabs(avg6L))*0.25f; avg6L = f6AL;
-			f6FR = (f6FR+f6FR+f6FR+fabs(avg6R))*0.25f; avg6R = f6FR;
+			f6AL = (f6AL+avg6L)*0.5f; avg6L = f6AL;
+			f6FR = (f6FR+avg6R)*0.5f; avg6R = f6FR;
 			//manipulating deep reverb tail for realism
 			
 			inputSampleL += (earlyReflectionL * earlyLoudness);
@@ -749,7 +748,7 @@ int _airwindowsAlgorithm::reset(void) {
 	}
 	dram->bez[bez_cycle] = 1.0;
 	dram->bezF[bez_cycle] = 1.0;
-		
+	
 	fpdL = 1.0; while (fpdL < 16386) fpdL = rand()*UINT32_MAX;
 	fpdR = 1.0; while (fpdR < 16386) fpdR = rand()*UINT32_MAX;
 	return noErr;

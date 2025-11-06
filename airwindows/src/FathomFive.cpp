@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "FathomFive"
 #define AIRWINDOWS_DESCRIPTION "A way of supplementing extreme bass that’s not just EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','a','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','a','u' )
 #define AIRWINDOWS_KERNELS
 enum {
 
