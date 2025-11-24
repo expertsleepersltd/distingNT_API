@@ -115,6 +115,19 @@ void	parameterChanged( _NT_algorithm* self, int p )
 	}
 }
 
+int 	parameterUiPrefix( _NT_algorithm* self, int p, char* buff )
+{
+	int len = 0;
+	if ( p >= kNumCommonParameters )
+	{
+		int ch = p - kNumCommonParameters;
+		len = NT_intToString( buff, 1+ch );
+		buff[len++] = ':';
+		buff[len] = 0;
+	}
+	return len;
+}
+
 void 	step( _NT_algorithm* self, float* busFrames, int numFramesBy4 )
 {
 	_gainAlgorithm* pThis = (_gainAlgorithm*)self;
@@ -156,6 +169,7 @@ static const _NT_factory factory =
 	.parameterChanged = parameterChanged,
 	.step = step,
 	.draw = NULL,
+	.parameterUiPrefix = parameterUiPrefix,
 };
 
 uintptr_t pluginEntry( _NT_selector selector, uint32_t data )

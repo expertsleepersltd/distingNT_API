@@ -41,8 +41,9 @@ enum _NT_version
 	kNT_apiVersion7,				// Add serialisation. Compatible with v4-6.
 	kNT_apiVersion8,				// Change hasCustomUi() to return uint32_t; remove _NT_pots; rename _NT_uiData.buttons; remove  _NT_uiData.potChange. Compatible with v4-7.
 	kNT_apiVersion9,				// Add midiSysEx. Compatible with v4-8.
+	kNT_apiVersion10,				// Add parameterUiPrefixCallback. Compatible with v4-9.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion9
+	kNT_apiVersionCurrent 		= kNT_apiVersion10
 };
 
 /*
@@ -337,6 +338,11 @@ struct _NT_uiData
 typedef float _NT_float3[3];
 
 /*
+ * The minimum buffer size passed to parameterUiPrefixCallback().
+ */
+enum { kNT_parameterUiPrefixSize = 16 };
+
+/*
  * Structure that defines an algorithm factory.
  *
  * Returned from pluginEntry().
@@ -453,6 +459,16 @@ struct _NT_factory
      * System Exclusive messages.
      */
     void			(*midiSysEx)( const uint8_t* message, uint32_t count );
+
+    /*
+     * Called by the host to allow the algorithm to specify a parameter prefix string,
+     * for example in the mapping menu.
+     * Typically used to prefix a channel number in multi-channel algorithms.
+     * The plug-in should fill buff[] with a NULL-terminated string and
+     * return its length, or simply return 0 if there is no prefix.
+     * The size of buff is guaranteed to be at least kNT_parameterUiPrefixSize bytes.
+     */
+	int 			(*parameterUiPrefix)( _NT_algorithm* self, int p, char* buff );
 };
 
 extern "C" {
