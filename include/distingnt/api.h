@@ -511,6 +511,9 @@ void		NT_setParameterFromAudio( uint32_t algorithmIndex, uint32_t parameter, int
 // Set an algorithm parameter. Safe to call from anywhere.
 void		NT_setParameterFromUi( uint32_t algorithmIndex, uint32_t parameter, int16_t value );
 
+// Set an algorithm parameter's "grayed out" status.
+void		NT_setParameterGrayedOut( uint32_t algorithmIndex, uint32_t parameter, bool gray );
+
 // Returns the offset between plug-in parameter indices and global parameter indices.
 // Typically used as e.g. NT_setParameterFromUi( NT_algorithmIndex(self), param + NT_parameterOffset(), value ).
 uint32_t	NT_parameterOffset(void);

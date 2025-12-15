@@ -42,15 +42,17 @@ enum
 	kParamOutput,
 	kParamOutputMode,
 	kParamGain,
+	kParamGrayDemo,
 };
 
 static const _NT_parameter	parameters[] = {
 	NT_PARAMETER_AUDIO_INPUT( "Input", 1, 1 )
 	NT_PARAMETER_AUDIO_OUTPUT_WITH_MODE( "Output", 1, 13 )
 	{ .name = "Gain", .min = 0, .max = 100, .def = 50, .unit = kNT_unitPercent, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Gray demo", .min = 0, .max = 1, .def = 0, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
 };
 
-static const uint8_t page1[] = { kParamGain };
+static const uint8_t page1[] = { kParamGain, kParamGrayDemo };
 static const uint8_t page2[] = { kParamInput, kParamOutput, kParamOutputMode };
 
 static const _NT_parameterPage pages[] = {
@@ -83,8 +85,15 @@ _NT_algorithm*	construct( const _NT_algorithmMemoryPtrs& ptrs, const _NT_algorit
 void	parameterChanged( _NT_algorithm* self, int p )
 {
 	_gainAlgorithm* pThis = (_gainAlgorithm*)self;
-	if ( p == kParamGain )
+	switch ( p )
+	{
+	case kParamGain:
 		pThis->gain = pThis->v[kParamGain] / 100.0f;
+		break;
+	case kParamGrayDemo:
+		NT_setParameterGrayedOut( NT_algorithmIndex( self ), kParamGain + NT_parameterOffset(), pThis->v[ kParamGrayDemo ] );
+		break;
+	}
 }
 
 void 	step( _NT_algorithm* self, float* busFrames, int numFramesBy4 )
