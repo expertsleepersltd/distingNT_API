@@ -1,0 +1,145 @@
+/*
+MIT License
+
+Copyright (c) 2025 Expert Sleepers Ltd
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+#ifndef _DISTINGNT_WAV_H
+#define _DISTINGNT_WAV_H
+
+#include <stdint.h>
+
+enum _NT_wavProgress
+{
+	kNT_WavNoProgress,
+	kNT_WavProgress,
+};
+
+// The number of channels in a WAV file.
+enum _NT_wavChannels
+{
+	kNT_WavMono,
+	kNT_WavStereo,
+};
+
+// The number of bits per sample in a WAV file.
+enum _NT_wavBits
+{
+	kNT_WavBits8,
+	kNT_WavBits16,
+	kNT_WavBits24,
+	kNT_WavBits32,		// float
+};
+
+/*
+ * Used to return info from NT_getSampleFolderInfo().
+ */
+struct _NT_wavFolderInfo
+{
+	const char* 	name;
+	uint32_t		numSampleFiles;
+};
+
+/*
+ * Used to return info from NT_getSampleFileInfo().
+ */
+struct _NT_wavInfo
+{
+	const char* 	name;
+	uint32_t    	numFrames;
+	uint32_t		sampleRate;
+	_NT_wavChannels	channels;
+	_NT_wavBits		bits;
+};
+
+/*
+ * Used with NT_readSampleFrames().
+ */
+struct _NT_wavRequest
+{
+	uint32_t 		folder;
+	uint32_t 		sample;
+	void* 			dst;
+	uint32_t 		numFrames;
+	uint32_t 		startOffset;
+	_NT_wavChannels	channels;
+	_NT_wavBits 	bits;
+	_NT_wavProgress	progress;
+	void 			(*callback)( void*, bool );
+	void* 			callbackData;
+};
+
+extern "C" {
+
+/*
+ * Query whether the MicroSD card is mounted.
+ * Plug-ins should defer any kind of card-based activity until the card is mounted,
+ * which might be some considerable time after the plug-in is constructed.
+ * All built-in algorithms watch for card (un)mount in step().
+ */
+bool		NT_isSdCardMounted(void);
+
+/*
+ * Get the number of sample folders.
+ */
+uint32_t	NT_getNumSampleFolders(void);
+
+/*
+ * Get info about the given folder.
+ */
+void		NT_getSampleFolderInfo( uint32_t folder, _NT_wavFolderInfo& info );
+
+/*
+ * Get info about the given sample file.
+ */
+void		NT_getSampleFileInfo( uint32_t folder, uint32_t sample, _NT_wavInfo& info );
+
+/*
+ * Read sample frames from a sample file.
+ *
+ * _NT_wavRequest contains data as follows:
+ *
+ * folder 		The folder index, 0 to NT_getNumSampleFolders()-1
+ * sample 		The sample file index in the folder, 0 to _NT_wavFolderInfo::numSampleFiles-1
+ * dst 			Pointer to memory buffer to receive the sample frames.
+ * numFrames 	The number of frames to read.
+ * startOffset	The number of frames at the start of the file to skip over.
+ * channels		The desired channels (mono/stereo).
+ * bits			The desired bit depth.
+ * progress		Whether to display a progress indicator.
+ * callback		The function to call when the read is complete.
+ * 					It is passed callbackData and boolean success/failure.
+ * callbackData	Data to be passed to the callback.
+ *
+ * If channels and bits don't match the actual file data,
+ * the file will be converted to match the requested format.
+ *
+ * The request object should persist until the callback has been called.
+ * You cannot for example declare the request on the stack.
+ *
+ * Returns true if the read was successfully initiated.
+ * The callback will not be called if the function returns false.
+ */
+bool		NT_readSampleFrames( const _NT_wavRequest& request );
+
+}
+
+#endif // _DISTINGNT_WAV_H

@@ -521,6 +521,7 @@ uint32_t	NT_parameterOffset(void);
 /*
  * Call to let the host know that the indexed parameter definition has changed.
  * i.e. self->parameters[ parameterIndex ] has been modified.
+ * May be called from a plug-in's step(), parameterChanged(), midiRealtime(), or midiMessage().
  */
 void		NT_updateParameterDefinition( uint32_t algorithmIndex, uint32_t parameterIndex );
 
