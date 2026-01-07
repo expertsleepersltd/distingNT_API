@@ -87,6 +87,68 @@ struct _NT_wavRequest
 	void* 			callbackData;
 };
 
+/*
+ * Used to return info from NT_getWavetableInfo().
+ */
+struct _NT_wavetableInfo
+{
+	const char* 	name;
+};
+
+/*
+ * Used with NT_readWavetable().
+ */
+struct _NT_wavetableRequest
+{
+	// Request inputs
+
+	uint32_t 		index;			// Index of the wavetable to load.
+
+    int16_t*		table;			// Pointer to memory to hold the wavetable.
+    uint32_t		tableSize;      // Maximum number of frames that table can hold.
+
+    void 			(*callback)( void* );	// The function to call when the read is complete.
+	void* 			callbackData;			// Data to be passed to the callback function.
+
+	// Request outputs
+
+    bool    		error;			// An error occurred during load.
+    bool    		usingMipMaps;	// If true, the table uses mipmaps. See below.
+
+    uint32_t		numWaves;		// The number of waves in the table.
+    uint32_t		waveLength;		// The number of frames per wave in the table.
+};
+
+/*
+ * Used with NT_evaluateWavetable().
+ */
+struct _NT_wavetableEvaluation
+{
+	float		phase;			// The oscillator phase, 0.0 <= phase < 1.0
+	float		offset;			// The position in the wavetable, 0 <= offset < (request.numWaves-1)
+	float		frequency;		// The frequency of the oscillator using the wavetable in Hz
+	uint32_t	mipmapSize;		// (Output) The chosen mipmap size
+};
+
+/*
+ * Wavetable organisation
+ * ======================
+ *
+ * If not using mipmaps:
+ * the waves are simply contiguous in memory.
+ * waveLength frames of wave 0; waveLength frames of wave 1; etc.
+ *
+ * If using mipmaps:
+ * power-of-two downsampled versions of the table are available, from 1 x 1 up to waveLength x waveLength
+ * The offset of a table of size s is ( s * numWaves )
+ * So the offsets of the downsampled tables are
+ * 1 x 1 : 	numWaves
+ * 2 x 2 :  2 * numWaves
+ * 4 * 4 : 	4 * numWaves
+ * etc.
+ * and the full-sized table is at ( waveLength * numWaves )
+ */
+
 extern "C" {
 
 /*
@@ -139,6 +201,31 @@ void		NT_getSampleFileInfo( uint32_t folder, uint32_t sample, _NT_wavInfo& info 
  * The callback will not be called if the function returns false.
  */
 bool		NT_readSampleFrames( const _NT_wavRequest& request );
+
+/*
+ * Get the number of wavetables.
+ */
+uint32_t	NT_getNumWavetables(void);
+
+/*
+ * Get info about the given wavetable.
+ */
+void		NT_getWavetableInfo( uint32_t index, _NT_wavetableInfo& info );
+
+/*
+ * Read a wavetable into memory.
+ *
+ * Returns true if the read was successfully initiated.
+ * The callback will not be called if the function returns false.
+ */
+bool		NT_readWavetable( _NT_wavetableRequest& request );
+
+/*
+ * A convenience function to evaluate a wavetable.
+ *
+ * Returns a value in the range ±1.0.
+ */
+float		NT_evaluateWavetable( const _NT_wavetableRequest& request, _NT_wavetableEvaluation& eval );
 
 }
 
