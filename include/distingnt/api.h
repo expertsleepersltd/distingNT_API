@@ -42,8 +42,9 @@ enum _NT_version
 	kNT_apiVersion8,				// Change hasCustomUi() to return uint32_t; remove _NT_pots; rename _NT_uiData.buttons; remove  _NT_uiData.potChange. Compatible with v4-7.
 	kNT_apiVersion9,				// Add midiSysEx. Compatible with v4-8.
 	kNT_apiVersion10,				// Add parameterUiPrefixCallback. Compatible with v4-9.
+	kNT_apiVersion11,				// Add WAV streaming. Compatible with v4-10.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion10
+	kNT_apiVersionCurrent 		= kNT_apiVersion11
 };
 
 /*
@@ -117,6 +118,8 @@ struct _NT_globals
 	uint32_t	maxFramesPerStep;		// maximum number of frames per step() call
 	float*		workBuffer;				// buffer available for internal use during step() - does not persist
 	uint32_t	workBufferSizeBytes;	// size of workBuffer in bytes
+	uint32_t	streamSizeBytes;		// size of _NT_stream in bytes
+	uint32_t	streamBufferSizeBytes;	// size of stream buffer passed to _NT_streamOpenData in bytes
 };
 
 /*
@@ -334,6 +337,11 @@ struct _NT_uiData
 	int8_t		encoders[2];	// encoder change ±1 or 0
 	uint8_t		unused[2];
 };
+
+/*
+ * Type used for stereo audio frames.
+ */
+typedef float _NT_frame[2];
 
 typedef float _NT_float3[3];
 

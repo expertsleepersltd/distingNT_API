@@ -26,6 +26,7 @@ SOFTWARE.
 #define _DISTINGNT_WAV_H
 
 #include <stdint.h>
+#include <distingnt/api.h>
 
 enum _NT_wavProgress
 {
@@ -47,6 +48,17 @@ enum _NT_wavBits
 	kNT_WavBits16,
 	kNT_WavBits24,
 	kNT_WavBits32,		// float
+};
+
+// Round robin mode for samples, used in _NT_streamOpenData.
+enum _NT_roundRobinMode
+{
+    kNT_RRModeSequential,
+    kNT_RRModeRandom,
+    kNT_RRModeRandom2,
+    kNT_RRModeRandom3,
+
+    kNT_numRRModes,
 };
 
 /*
@@ -149,6 +161,26 @@ struct _NT_wavetableEvaluation
  * and the full-sized table is at ( waveLength * numWaves )
  */
 
+/*
+ * Opaque pointer to a memory block holding a stream structure.
+ * Should be allocated using NT_globals.streamSizeBytes
+ */
+typedef void* _NT_stream;
+
+/*
+ * Structure used by NT_streamOpen().
+ */
+struct _NT_streamOpenData
+{
+	void*				streamBuffer;		// A buffer for use by the streaming system, of size NT_globals.streamBufferSizeBytes
+	uint32_t			folder;				// The sample folder
+	uint32_t			sample;				// The sample index within the folder
+	float				velocity;			// Velocity in range 0.0-1.0, used for velocity switching
+	uint32_t 			startOffset;		// The position in the sample to start playback, in sample frames
+	bool 				reverse;			// Whether to start playback in the reverse direction
+	_NT_roundRobinMode	rrMode;				// The round robin mode
+};
+
 extern "C" {
 
 /*
@@ -226,6 +258,24 @@ bool		NT_readWavetable( _NT_wavetableRequest& request );
  * Returns a value in the range ±1.0.
  */
 float		NT_evaluateWavetable( const _NT_wavetableRequest& request, _NT_wavetableEvaluation& eval );
+
+/*
+ * Open a stream for playback.
+ *
+ * Returns boolean success.
+ */
+bool		NT_streamOpen( _NT_stream stream, const _NT_streamOpenData& data );
+
+/*
+ * Render frames from the stream,
+ * placing the results in renderBuffer
+ *
+ * numFrames	The maximum number of frames to render.
+ * speed		The playback speed, in sample frames per render frame.
+ *
+ * Returns the number of frames rendered.
+ */
+uint32_t 	NT_streamRender( _NT_stream stream, _NT_frame* renderBuffer, uint32_t numFrames, float speed );
 
 }
 
