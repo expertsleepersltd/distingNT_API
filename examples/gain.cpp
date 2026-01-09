@@ -11,21 +11,35 @@ struct _gainAlgorithm : public _NT_algorithm
 	float gain;
 };
 
+constexpr int maxCustomGainParam = 1000;
+
+static float customGain( int v )
+{
+	constexpr float minv = 0.1f;
+	constexpr float maxv = 1.0f;
+	constexpr float mult = log( maxv/minv )/maxCustomGainParam;
+	return minv * exp( mult * v );
+}
+
 enum
 {
 	kParamInput,
 	kParamOutput,
 	kParamOutputMode,
-	kParamGain,
+	kParamGainLinear,
+	kParamGainDecibels,
+	kParamGainCustom,
 };
 
 static const _NT_parameter	parameters[] = {
 	NT_PARAMETER_AUDIO_INPUT( "Input", 1, 1 )
 	NT_PARAMETER_AUDIO_OUTPUT_WITH_MODE( "Output", 1, 13 )
-	{ .name = "Gain", .min = 0, .max = 100, .def = 50, .unit = kNT_unitPercent, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Linear", .min = 0, .max = 100, .def = 50, .unit = kNT_unitPercent, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Decibels", .min = -12, .max = 0, .def = 0, .unit = kNT_unitDb, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Custom", .min = 0, .max = maxCustomGainParam, .def = maxCustomGainParam, .unit = kNT_unitHasStrings, .scaling = 0, .enumStrings = NULL },
 };
 
-static const uint8_t page1[] = { kParamGain };
+static const uint8_t page1[] = { kParamGainLinear, kParamGainDecibels, kParamGainCustom };
 static const uint8_t page2[] = { kParamInput, kParamOutput, kParamOutputMode };
 
 static const _NT_parameterPage pages[] = {
@@ -55,11 +69,29 @@ _NT_algorithm*	construct( const _NT_algorithmMemoryPtrs& ptrs, const _NT_algorit
 	return alg;
 }
 
+int 	parameterString( _NT_algorithm* self, int p, int v, char* buff )
+{
+	int len = 0;
+	
+	switch ( p )
+	{
+	case kParamGainCustom:
+		len = NT_floatToString( buff, customGain( v ) );
+		break;
+	}
+	
+	return len;
+}
+
 void	parameterChanged( _NT_algorithm* self, int p )
 {
 	_gainAlgorithm* pThis = (_gainAlgorithm*)self;
-	if ( p == kParamGain )
-		pThis->gain = pThis->v[kParamGain] / 100.0f;
+	if ( p >= kParamGainLinear && p <= kParamGainCustom )
+	{
+		pThis->gain = pThis->v[kParamGainLinear] / 100.0f;
+		pThis->gain *= pow( 10.0f, pThis->v[kParamGainDecibels] / 20.0f );
+		pThis->gain *= customGain( pThis->v[kParamGainCustom] );
+	}
 }
 
 void 	step( _NT_algorithm* self, float* busFrames, int numFramesBy4 )
@@ -86,7 +118,8 @@ bool	draw( _NT_algorithm* self )
 {
 	_gainAlgorithm* pThis = (_gainAlgorithm*)self;
 	
-	for ( int i=0; i<pThis->v[kParamGain]; ++i )
+	int gain = pThis->gain * 100;
+	for ( int i=0; i<gain; ++i )
 		NT_screen[ 128 * 20 + i ] = 0xa5;
 		
 	NT_drawText( 10, 40, "Gain" );
@@ -110,6 +143,7 @@ static const _NT_factory factory =
 	.step = step,
 	.draw = draw,
 	.tags = kNT_tagUtility,
+	.parameterString = parameterString,
 };
 
 uintptr_t pluginEntry( _NT_selector selector, uint32_t data )
