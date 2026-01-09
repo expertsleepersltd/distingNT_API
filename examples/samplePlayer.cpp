@@ -17,8 +17,8 @@ enum
 
 static const _NT_parameter	parameters[] = {
 	NT_PARAMETER_AUDIO_OUTPUT_WITH_MODE( "Output", 1, 13 )
-	{ .name = "Folder", .min = 0, .max = 32767, .def = 0, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
-	{ .name = "Sample", .min = 0, .max = 32767, .def = 0, .unit = kNT_unitNone, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Folder", .min = 0, .max = 32767, .def = 0, .unit = kNT_unitHasStrings, .scaling = 0, .enumStrings = NULL },
+	{ .name = "Sample", .min = 0, .max = 32767, .def = 0, .unit = kNT_unitConfirm, .scaling = 0, .enumStrings = NULL },
 };
 
 static const uint8_t page1[] = { kParamFolder, kParamSample };
@@ -93,6 +93,42 @@ _NT_algorithm*	construct( const _NT_algorithmMemoryPtrs& ptrs, const _NT_algorit
 	alg->request.dst = alg->dram;
 
 	return alg;
+}
+
+int 	parameterString( _NT_algorithm* self, int p, int v, char* buff )
+{
+	_samplePlayer* pThis = (_samplePlayer*)self;
+	int len = 0;
+	
+	switch ( p )
+	{
+	case kParamFolder:
+	{
+		_NT_wavFolderInfo folderInfo;
+		NT_getSampleFolderInfo( v, folderInfo );
+		if ( folderInfo.name )
+		{
+			strncpy( buff, folderInfo.name, kNT_parameterStringSize-1 );
+			buff[ kNT_parameterStringSize-1 ] = 0;
+			len = strlen( buff );
+		}
+	}
+		break;
+	case kParamSample:
+	{
+		_NT_wavInfo info;
+		NT_getSampleFileInfo( pThis->v[ kParamFolder ], v, info );
+		if ( info.name )
+		{
+			strncpy( buff, info.name, kNT_parameterStringSize-1 );
+			buff[ kNT_parameterStringSize-1 ] = 0;
+			len = strlen( buff );
+		}
+	}
+		break;
+	}
+	
+	return len;
 }
 
 void	parameterChanged( _NT_algorithm* self, int p )
@@ -203,6 +239,7 @@ static const _NT_factory factory =
 	.step = step,
 	.draw = draw,
 	.tags = kNT_tagInstrument,
+	.parameterString = parameterString,
 };
 
 uintptr_t pluginEntry( _NT_selector selector, uint32_t data )
