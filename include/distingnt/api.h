@@ -43,8 +43,9 @@ enum _NT_version
 	kNT_apiVersion9,				// Add midiSysEx. Compatible with v4-8.
 	kNT_apiVersion10,				// Add parameterUiPrefixCallback. Compatible with v4-9.
 	kNT_apiVersion11,				// Add WAV streaming. Compatible with v4-10.
+	kNT_apiVersion12,				// Add parameterString(). Compatible with v4-11.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion11
+	kNT_apiVersionCurrent 		= kNT_apiVersion12
 };
 
 /*
@@ -164,7 +165,7 @@ struct _NT_algorithmMemoryPtrs
 /*
  * Values for the unit field of _NT_parameter.
  */
-enum
+enum _NT_parameterUnit
 {
 	kNT_unitNone,
 	kNT_unitEnum,						// enumStrings must also be provided
@@ -181,6 +182,9 @@ enum
 	kNT_unitMillivolts,
 	kNT_unitVolts,
 	kNT_unitBPM,
+	kNT_unitDegrees,
+	kNT_unitHasStrings,					// parameterString() will be called for the parameter
+	kNT_unitConfirm,					// user needs to confirm changes. Also calls parameterString().
 
 	// These values should only be used via the NT_PARAMETER_AUDIO_INPUT() etc. macros.
 	kNT_unitAudioInput = 100,
@@ -346,9 +350,14 @@ typedef float _NT_frame[2];
 typedef float _NT_float3[3];
 
 /*
- * The minimum buffer size passed to parameterUiPrefixCallback().
+ * The minimum buffer size passed to parameterUiPrefix().
  */
 enum { kNT_parameterUiPrefixSize = 16 };
+
+/*
+ * The minimum buffer size passed to parameterString().
+ */
+enum { kNT_parameterStringSize = 64 };
 
 /*
  * Structure that defines an algorithm factory.
@@ -477,6 +486,16 @@ struct _NT_factory
      * The size of buff is guaranteed to be at least kNT_parameterUiPrefixSize bytes.
      */
 	int 			(*parameterUiPrefix)( _NT_algorithm* self, int p, char* buff );
+
+	/*
+	 * Called by the host to allow the algorithm to return a string to be displayed
+	 * for a parameter other than the default numeric value.
+	 * Called for parameters of type kNT_unitHasStrings and kNT_unitConfirm.
+     * The plug-in should fill buff[] with a NULL-terminated string and
+     * return its length, or simply return 0 to use the default numeric value.
+     * The size of buff is guaranteed to be at least kNT_parameterStringSize bytes.
+	 */
+	int 			(*parameterString)( _NT_algorithm* self, int p, int v, char* buff );
 };
 
 extern "C" {
