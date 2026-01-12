@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Verbity2"
 #define AIRWINDOWS_DESCRIPTION "Adds stereo crossmodulation and expands Verbity's feedforward reverb topology."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','u' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

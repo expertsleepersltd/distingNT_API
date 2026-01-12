@@ -2,7 +2,7 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChimeyDeluxe"
-#define AIRWINDOWS_DESCRIPTION "ChimeyDeluxe"
+#define AIRWINDOWS_DESCRIPTION "A very flexible compressed DI conditioner."
 #define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','i' )
 #define AIRWINDOWS_KERNELS
 enum {
@@ -53,9 +53,18 @@ struct _kernel {
 		float angS[18][15];
 		float angA[18][15];
 		float angG[15];
-		
-		float muComp;
-		float muSpd;
+				
+		enum {
+			bez_AL,
+			bez_BL,
+			bez_CL,
+			bez_InL,
+			bez_UnInL,
+			bez_SampL,
+			bez_cycle,
+			bez_total
+		}; //the new undersampling. bez signifies the bezier curve reconstruction
+		float bezComp[bez_total][18];
 				
 		uint32_t fpd;
 	
@@ -79,81 +88,84 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 	
 	float drive = 1.0f;
 	float pad = 1.0f;
-	angG[1] = GetParameter( kParam_A )+0.5f;
+	angG[1] = (GetParameter( kParam_A )+1.5f)*0.5f;
 	if (pad > angG[1]) pad = angG[1];
 	if (drive < angG[1]) drive = angG[1];
 	angG[0] = (1.0f+angG[1])*0.5f; //if boost, boost half
 	if (angG[0] > angG[1]) angG[0] = angG[1];
-	angG[2] = GetParameter( kParam_B )+0.5f;
+	angG[2] = (GetParameter( kParam_B )+1.5f)*0.5f;
 	if (pad > angG[2]) pad = angG[2];
 	if (drive < angG[2]) drive = angG[2];
-	angG[3] = GetParameter( kParam_C )+0.5f;
+	angG[3] = (GetParameter( kParam_C )+1.5f)*0.5f;
 	if (pad > angG[3]) pad = angG[3];
 	if (drive < angG[3]) drive = angG[3];
-	angG[4] = GetParameter( kParam_D )+0.5f;
+	angG[4] = (GetParameter( kParam_D )+1.5f)*0.5f;
 	if (pad > angG[4]) pad = angG[4];
 	if (drive < angG[4]) drive = angG[4];
-	angG[5] = GetParameter( kParam_E )+0.5f;
+	angG[5] = (GetParameter( kParam_E )+1.5f)*0.5f;
 	if (pad > angG[5]) pad = angG[5];
 	if (drive < angG[5]) drive = angG[5];
-	angG[6] = GetParameter( kParam_F )+0.5f;
+	angG[6] = (GetParameter( kParam_F )+1.5f)*0.5f;
 	if (pad > angG[6]) pad = angG[6];
 	if (drive < angG[6]) drive = angG[6];
-	angG[7] = GetParameter( kParam_G )+0.5f;
+	angG[7] = (GetParameter( kParam_G )+1.5f)*0.5f;
 	if (pad > angG[7]) pad = angG[7];
 	if (drive < angG[7]) drive = angG[7];
-	angG[8] = GetParameter( kParam_H )+0.5f;
+	angG[8] = (GetParameter( kParam_H )+1.5f)*0.5f;
 	if (pad > angG[8]) pad = angG[8];
 	if (drive < angG[8]) drive = angG[8];
-	angG[9] = GetParameter( kParam_I )+0.5f;
+	angG[9] = (GetParameter( kParam_I )+1.5f)*0.5f;
 	if (pad > angG[9]) pad = angG[9];
 	if (drive < angG[9]) drive = angG[9];
-	angG[10] = GetParameter( kParam_J )+0.5f;
+	angG[10] = (GetParameter( kParam_J )+1.5f)*0.5f;
 	if (pad > angG[10]) pad = angG[10];
 	if (drive < angG[10]) drive = angG[10];
-	angG[11] = (angG[10]+1.0f)*0.5f;
-	angG[12] = (angG[11]+1.0f)*0.5f;
-	float tune = 0.618f+(overallscale*0.0055f);	
-	float threshold = 1.0f-(drive*0.23f);
-	float adjSpd = ((drive*120.0f)+50.0f)*overallscale;
+	angG[12] = angG[11] = angG[10];
+	if (drive > 1.0f) drive = powf(drive,drive*2.0f);
+	float tune = 0.618f+(overallscale*0.0055f);
+	float bezRez = (pad * drive * 0.0005f)/overallscale;
+	int bezFreqFraction = (int)(1.0f/bezRez);
+	float bezFreqTrim = (float)bezFreqFraction/(bezFreqFraction+1.0f);
+	bezRez = 1.0f / bezFreqFraction;
+	bezFreqTrim = 1.0f-(bezRez*bezFreqTrim);
 	
 	while (nSampleFrames-- > 0) {
-		float inputSample = *sourceP;
-		if (fabs(inputSample)<1.18e-23f) inputSample = fpd * 1.18e-17f;
+		float inputSampleL = *sourceP;
+		if (fabs(inputSampleL)<1.18e-23f) inputSampleL = fpd * 1.18e-17f;
 		
 		for (int x = 0; x < 16; x++) {
 			float fr = (0.92f/overallscale)+(overallscale*0.01f);
-			float band = inputSample; inputSample = 0.0f;
+			float band = inputSampleL; inputSampleL = 0.0f;
 			for (int y = 0; y < 12; y++) {
 				angA[x][y] = (angA[x][y]*(1.0f-fr)) + ((band-angS[x][y])*fr);
 				float temp = band; band = ((angS[x][y]+(angA[x][y]*fr)) * (1.0f-fr))+(band*fr);
 				angS[x][y] = ((angS[x][y]+(angA[x][y]*fr)) * (1.0f-fr))+(band*fr);
-				inputSample += ((temp-band)*angG[y]);
+				inputSampleL += ((temp-band)*angG[y]);
 				fr *= tune;
 			}
-			inputSample += band;
-			inputSample *= threshold;
-			inputSample *= (muComp/threshold);
-			if (fabs(inputSample) > threshold)
-			{
-				muComp *= muSpd;
-				if (threshold/fabs(inputSample) < threshold) muComp += threshold*fabs(inputSample);
-				else muComp -= threshold/fabs(inputSample);
-				muComp /= muSpd;
-			} else {
-				muComp *= (muSpd*muSpd);
-				muComp += ((1.1f+threshold)-fabs(inputSample));
-				muComp /= (muSpd*muSpd);
+			inputSampleL += band; //end of filter part
+			bezComp[bez_cycle][x] += bezRez;
+			bezComp[bez_SampL][x] += (fabs(inputSampleL) * bezRez);
+			if (bezComp[bez_cycle][x] > 1.0f) {
+				bezComp[bez_cycle][x] = 0.0f;
+				bezComp[bez_CL][x] = bezComp[bez_BL][x];
+				bezComp[bez_BL][x] = bezComp[bez_AL][x];
+				bezComp[bez_AL][x] = bezComp[bez_SampL][x];
+				bezComp[bez_SampL][x] = 0.0f;
 			}
-			muComp = fmax(fmin(muComp,1.0f),threshold);
-			inputSample *= (muComp*muComp);
-			muSpd = fmax(fmin(((muSpd*(muSpd-1.0f))+(fabs(inputSample*adjSpd)))/muSpd,adjSpd*2.0f),adjSpd);			
+			float z = bezComp[bez_cycle][x]*bezFreqTrim;
+			float CBL = (bezComp[bez_CL][x]*(1.0f-z))+(bezComp[bez_BL][x]*z);
+			float BAL = (bezComp[bez_BL][x]*(1.0f-z))+(bezComp[bez_AL][x]*z);
+			float CBAL = (bezComp[bez_BL][x]+(CBL*(1.0f-z))+(BAL*z));
+			CBAL = fmin(fmax(CBAL*drive*0.23f,0.0f),M_PI_2);
+			inputSampleL *= 1.0f-sin(CBAL);
 		}
-		inputSample = sin(fmin(fmax(inputSample*pad,-M_PI_2),M_PI_2));
+		inputSampleL /= drive;
+		inputSampleL = fmin(fmax(inputSampleL*pad,-1.0f),1.0f); //let's do an output clip
 		
 		
 		
-		*destP = inputSample;
+		*destP = inputSampleL;
 		
 		sourceP += inNumChannels; destP += inNumChannels;
 	}
@@ -162,17 +174,15 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 void _airwindowsAlgorithm::_kernel::reset(void) {
 {
 	for(int x=0; x<17; x++) {
+		for (int w = 0; w < bez_total; w++) bezComp[w][x] = 0.0;
+		bezComp[bez_cycle][x] = 1.0;
 		for(int y=0; y<14; y++) {
-			angS[x][y] = 0.0;angA[x][y] = 0.0;
+			angS[x][y] = 0.0;
+			angA[x][y] = 0.0;
 		}
 	}
-	for(int y=0; y<14; y++) {
-		angG[y] = 0.0;
-	}
-	
-	muComp = 1.0;
-	muSpd = 100.0;
-	
+	for(int y=0; y<14; y++) angG[y] = 0.0;
+		
 	fpd = 1.0; while (fpd < 16386) fpd = rand()*UINT32_MAX;
 }
 };

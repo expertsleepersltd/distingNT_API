@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestFade"
 #define AIRWINDOWS_DESCRIPTION "Just like PurestGain, but for LONG fades."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','!' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','#' )
 #define AIRWINDOWS_KERNELS
 enum {
 

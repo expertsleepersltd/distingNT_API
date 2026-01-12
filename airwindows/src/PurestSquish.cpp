@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestSquish"
 #define AIRWINDOWS_DESCRIPTION "An open-sounding compressor with bass bloom."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','$' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','&' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Bite"
 #define AIRWINDOWS_DESCRIPTION "An unusual edge-maker."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','%' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','&' )
 #define AIRWINDOWS_KERNELS
 enum {
 

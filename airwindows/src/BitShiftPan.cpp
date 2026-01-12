@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BitShiftPan"
 #define AIRWINDOWS_DESCRIPTION "Gives you a gain and a pan control that are ONLY done using bit shifts."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','$' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','%' )
 enum {
 
 	kParam_One =0,

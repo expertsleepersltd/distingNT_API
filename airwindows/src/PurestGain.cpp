@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestGain"
 #define AIRWINDOWS_DESCRIPTION "A high-res noise shaped gain, with smoothed fader."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','#' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','$' )
 #define AIRWINDOWS_KERNELS
 enum {
 

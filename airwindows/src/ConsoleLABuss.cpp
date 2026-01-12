@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleLABuss"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows take on the Quad Eight console."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','2' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','5' )
 enum {
 
 	kParam_One =0,

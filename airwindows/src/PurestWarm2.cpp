@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestWarm2"
 #define AIRWINDOWS_DESCRIPTION "Adds dual dry/wet controls for each side of the waveform."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','&' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u',')' )
 #define AIRWINDOWS_KERNELS
 enum {
 

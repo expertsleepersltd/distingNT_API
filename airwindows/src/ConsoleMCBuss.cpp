@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleMCBuss"
 #define AIRWINDOWS_DESCRIPTION "The initial, bright take on the MCI console."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','4' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','7' )
 enum {
 
 	kParam_One =0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BitGlitter"
 #define AIRWINDOWS_DESCRIPTION "An old-sampler style digital lo-fi plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','!' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','#' )
 #define AIRWINDOWS_KERNELS
 enum {
 

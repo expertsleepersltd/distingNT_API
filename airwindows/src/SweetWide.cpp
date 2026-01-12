@@ -2,7 +2,7 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SweetWide"
-#define AIRWINDOWS_DESCRIPTION "SweetWide"
+#define AIRWINDOWS_DESCRIPTION "A strange grungy stereo widener."
 #define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','w','e' )
 enum {
 

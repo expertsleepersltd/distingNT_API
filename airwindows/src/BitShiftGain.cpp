@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BitShiftGain"
 #define AIRWINDOWS_DESCRIPTION "The ‘One Weird Trick’ perfect boost/pad, but in 6db increments ONLY."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','#' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','$' )
 #define AIRWINDOWS_KERNELS
 enum {
 

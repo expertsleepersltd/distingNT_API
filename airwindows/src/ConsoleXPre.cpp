@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleXPre"
 #define AIRWINDOWS_DESCRIPTION "Just the tone shaping from ConsoleX."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','=' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','@' )
 enum {
 
 	kParam_HIP = 0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestWarm"
 #define AIRWINDOWS_DESCRIPTION "A subtle tone shaper and warmth adder."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','%' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','(' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -129,14 +129,32 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 			}
 			inputSample += band;
 			inputSample *= drive;
-			inputSample = sin(fmin(fmax(inputSample,-M_PI),M_PI));
+			inputSample = fmin(fmax(inputSample,-2.032610446872596f),2.032610446872596f);
+			float X = inputSample * inputSample;
+			float temp = inputSample * X;
+			inputSample -= (temp*0.125f); temp *= X;
+			inputSample += (temp*0.0078125f); temp *= X;
+			inputSample -= (temp*0.000244140625f); temp *= X;
+			inputSample += (temp*0.000003814697265625f); temp *= X;
+			inputSample -= (temp*0.0000000298023223876953125f); temp *= X;
+			//purestsaturation: sine, except all the corrections
+			//retain mantissa of a float increasing power function
 		}
 		
 		if (pad < 1.0f) {
 			inputSample *= pad;
 		}
 		
-		inputSample = sin(fmin(fmax(inputSample,-M_PI),M_PI));
+		inputSample = fmin(fmax(inputSample,-2.032610446872596f),2.032610446872596f);
+		float X = inputSample * inputSample;
+		float temp = inputSample * X;
+		inputSample -= (temp*0.125f); temp *= X;
+		inputSample += (temp*0.0078125f); temp *= X;
+		inputSample -= (temp*0.000244140625f); temp *= X;
+		inputSample += (temp*0.000003814697265625f); temp *= X;
+		inputSample -= (temp*0.0000000298023223876953125f); temp *= X;
+		//purestsaturation: sine, except all the corrections
+		//retain mantissa of a float increasing power function
 		
 		
 		
