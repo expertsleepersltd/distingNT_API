@@ -226,8 +226,21 @@ struct _NT_parameterPage
 {
 	const char* 	name;					// Name of the page
 	uint8_t			numParams;				// Number of parameters on this page
+	uint8_t			group;					// See note below
+	uint8_t			unused[2];
 	const uint8_t*	params;					// Pointer to array of parameter indices
 };
+
+/*
+ * Note on parameter page group numbers:
+ *
+ * If pages share the same group number,
+ * the current parameter position within the page
+ * will be preserved by the UI when switching between pages.
+ *
+ * For backwards compatibility, if the group is 0,
+ * it will be set to the index of the page in the pages array.
+ */
 
 /*
  * Structure to define all the parameter pages of an algorithm.
