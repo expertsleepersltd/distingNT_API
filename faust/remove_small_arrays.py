@@ -20,7 +20,17 @@ def process( text ):
 	# remove the memoryDestroy() calls
 	for s in ss:
 		text = text.replace( f'fManager->destroy({s});', '' )
-		
+
+	# delete lines containing C++ destructors
+	lines = text.splitlines()
+	filtered_lines = [line for line in lines if not re.search(r'~\w+\s*\(', line)]
+	text = '\n'.join(filtered_lines)
+
+	# delete lines containing deletemydspSIG calls
+	lines = text.splitlines()
+	filtered_lines = [line for line in lines if not re.search(r'deletemydspSIG\d+\(sig\d+, fManager\);', line)]
+	text = '\n'.join(filtered_lines)
+
 	return text
 	
 def main():
