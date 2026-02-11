@@ -2,7 +2,7 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeNoise"
-#define AIRWINDOWS_DESCRIPTION "DeNoise"
+#define AIRWINDOWS_DESCRIPTION "Can work as a multiband gate and as a wild effect."
 #define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','N' )
 #define AIRWINDOWS_KERNELS
 enum {

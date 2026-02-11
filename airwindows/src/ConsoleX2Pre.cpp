@@ -116,10 +116,12 @@ struct _kernel {
 		float avg8L[9];
 		float avg4L[5];
 		float avg2L[3];
+		float post8L[9];
+		float post4L[5];
+		float post2L[3];
 		int avgPos;
-		float lastSlewL;
-		float lastSlewpleL;
-		//preTapeHack
+		float lastDarkL;
+		//preTapeHack	
 		
 		float inTrimA;
 		float inTrimB;
@@ -142,6 +144,8 @@ struct _kernel {
 		float dBaL[dscBuf+5];
 		float avg32L[33];
 		float avg16L[17];
+		float post32L[33];
+		float post16L[17];
 	};
 	_dram* dram;
 };
@@ -349,11 +353,13 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 				darkSampleL = 0.0f;
 				for (int x = 0; x < 2; x++) {darkSampleL += avg2L[x];}
 				darkSampleL /= 2.0f; 
-			} avgPos++;
-			lastSlewL += fabs(lastSlewpleL-inputSampleL); lastSlewpleL = inputSampleL;
-			float avgSlewL = fmin(lastSlewL,1.0f);
-			lastSlewL = fmax(lastSlewL*0.78f,2.39996322972865332223f); //look up Golden Angle, it's cool
+			} //only update after the post-distortion filter stage
+
+			float avgSlewL = fmin(fabs(lastDarkL-inputSampleL)*0.12f*overallscale,1.0f);
+			avgSlewL = 1.0f-(1.0f-avgSlewL*1.0f-avgSlewL);
 			inputSampleL = (inputSampleL*(1.0f-avgSlewL)) + (darkSampleL*avgSlewL);
+			lastDarkL = darkSampleL;
+
 			//begin Discontinuity section
 			inputSampleL *= moreDiscontinuity;
 			dram->dBaL[dBaXL] = inputSampleL; dBaPosL *= 0.5f; dBaPosL += fabs((inputSampleL*((inputSampleL*0.25f)-0.5f))*0.5f);
@@ -380,6 +386,36 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 			//this is a degenerate form of a Taylor Series to approximate sin()
 			//end TapeHack section
 			//Discontapeity
+			darkSampleL = inputSampleL;
+			if (avgPos > 31) avgPos = 0;
+			if (spacing > 31) {
+				dram->post32L[avgPos] = darkSampleL;
+				darkSampleL = 0.0f;
+				for (int x = 0; x < 32; x++) {darkSampleL += dram->post32L[x];}
+				darkSampleL /= 32.0f;
+			} if (spacing > 15) {
+				dram->post16L[avgPos%16] = darkSampleL;
+				darkSampleL = 0.0f;
+				for (int x = 0; x < 16; x++) {darkSampleL += dram->post16L[x];}
+				darkSampleL /= 16.0f;
+			} if (spacing > 7) {
+				post8L[avgPos%8] = darkSampleL;
+				darkSampleL = 0.0f;
+				for (int x = 0; x < 8; x++) {darkSampleL += post8L[x];}
+				darkSampleL /= 8.0f;
+			} if (spacing > 3) {
+				post4L[avgPos%4] = darkSampleL;
+				darkSampleL = 0.0f;
+				for (int x = 0; x < 4; x++) {darkSampleL += post4L[x];}
+				darkSampleL /= 4.0f;
+			} if (spacing > 1) {
+				post2L[avgPos%2] = darkSampleL;
+				darkSampleL = 0.0f;
+				for (int x = 0; x < 2; x++) {darkSampleL += post2L[x];}
+				darkSampleL /= 2.0f; 
+			} avgPos++;
+			inputSampleL = (inputSampleL*(1.0f-avgSlewL)) + (darkSampleL*avgSlewL);
+			//use the previously calculated depth of the filter			
 		}
 		
 		if (!eqOff) {
@@ -574,14 +610,13 @@ void _airwindowsAlgorithm::_kernel::reset(void) {
 	dBaXL = 1;
 	//Discontapeity
 	
-	for (int x = 0; x < 33; x++) {dram->avg32L[x] = 0.0;}
-	for (int x = 0; x < 17; x++) {dram->avg16L[x] = 0.0;}
-	for (int x = 0; x < 9; x++) {avg8L[x] = 0.0;}
-	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0;}
-	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0;}
+	for (int x = 0; x < 33; x++) {dram->avg32L[x] = 0.0; dram->post32L[x] = 0.0;}
+	for (int x = 0; x < 17; x++) {dram->avg16L[x] = 0.0; dram->post16L[x] = 0.0;}
+	for (int x = 0; x < 9; x++) {avg8L[x] = 0.0; post8L[x] = 0.0;}
+	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0; post4L[x] = 0.0;}
+	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0; post2L[x] = 0.0;}
 	avgPos = 0;
-	lastSlewL = 0.0;
-	lastSlewpleL = 0.0;
+	lastDarkL = 0.0;
 	//preTapeHack
 	
 	lFreqA = 1.0; lFreqB = 1.0;

@@ -126,12 +126,16 @@ enum { kNumTemplateParameters = 7 };
 	float avg4R[5];
 	float avg2L[3];
 	float avg2R[3];
+	float post8L[9];
+	float post8R[9];
+	float post4L[5];
+	float post4R[5];
+	float post2L[3];
+	float post2R[3];
+	float lastDarkL;
+	float lastDarkR;
 	int avgPos;
-	float lastSlewL;
-	float lastSlewR;
-	float lastSlewpleL;
-	float lastSlewpleR;
-	//preTapeHack	
+	//preTapeHack
 	
 	float panA;
 	float panB;
@@ -162,6 +166,10 @@ enum { kNumTemplateParameters = 7 };
 	float avg32R[33];
 	float avg16L[17];
 	float avg16R[17];
+	float post32L[33];
+	float post32R[33];
+	float post16L[17];
+	float post16R[17];
 	};
 	_dram* dram;
 #include "../include/template2.h"
@@ -368,15 +376,16 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 				darkSampleL = 0.0f; darkSampleR = 0.0f;
 				for (int x = 0; x < 2; x++) {darkSampleL += avg2L[x]; darkSampleR += avg2R[x];}
 				darkSampleL /= 2.0f; darkSampleR /= 2.0f; 
-			} avgPos++;
-			lastSlewL += fabs(lastSlewpleL-inputSampleL); lastSlewpleL = inputSampleL;
-			float avgSlewL = fmin(lastSlewL*lastSlewL*(0.0635f-(overallscale*0.0018436f)),1.0f);
-			lastSlewL = fmax(lastSlewL*0.78f,2.39996322972865332223f);
-			lastSlewR += fabs(lastSlewpleR-inputSampleR); lastSlewpleR = inputSampleR;
-			float avgSlewR = fmin(lastSlewR*lastSlewR*(0.0635f-(overallscale*0.0018436f)),1.0f);
-			lastSlewR = fmax(lastSlewR*0.78f,2.39996322972865332223f); //look up Golden Angle, it's cool
+			} //only update avgPos after the post-distortion filter stage
+			float avgSlewL = fmin(fabs(lastDarkL-inputSampleL)*0.12f*overallscale,1.0f);
+			avgSlewL = 1.0f-(1.0f-avgSlewL*1.0f-avgSlewL);
 			inputSampleL = (inputSampleL*(1.0f-avgSlewL)) + (darkSampleL*avgSlewL);
+			lastDarkL = darkSampleL;
+			float avgSlewR = fmin(fabs(lastDarkR-inputSampleR)*0.12f*overallscale,1.0f);
+			avgSlewR = 1.0f-(1.0f-avgSlewR*1.0f-avgSlewR);
 			inputSampleR = (inputSampleR*(1.0f-avgSlewR)) + (darkSampleR*avgSlewR);
+			lastDarkR = darkSampleR;
+			
 			//begin Discontinuity section
 			inputSampleL *= moreDiscontinuity;
 			dram->dBaL[dBaXL] = inputSampleL; dBaPosL *= 0.5f; dBaPosL += fabs((inputSampleL*((inputSampleL*0.25f)-0.5f))*0.5f);
@@ -428,6 +437,39 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 			//this is a degenerate form of a Taylor Series to approximate sin()
 			//end TapeHack section
 			//Discontapeity
+			
+			darkSampleL = inputSampleL;
+			darkSampleR = inputSampleR;
+			if (avgPos > 31) avgPos = 0;
+			if (spacing > 31) {
+				dram->post32L[avgPos] = darkSampleL; dram->post32R[avgPos] = darkSampleR;
+				darkSampleL = 0.0f; darkSampleR = 0.0f;
+				for (int x = 0; x < 32; x++) {darkSampleL += dram->post32L[x]; darkSampleR += dram->post32R[x];}
+				darkSampleL /= 32.0f; darkSampleR /= 32.0f;
+			} if (spacing > 15) {
+				dram->post16L[avgPos%16] = darkSampleL; dram->post16R[avgPos%16] = darkSampleR;
+				darkSampleL = 0.0f; darkSampleR = 0.0f;
+				for (int x = 0; x < 16; x++) {darkSampleL += dram->post16L[x]; darkSampleR += dram->post16R[x];}
+				darkSampleL /= 16.0f; darkSampleR /= 16.0f;
+			} if (spacing > 7) {
+				post8L[avgPos%8] = darkSampleL; post8R[avgPos%8] = darkSampleR;
+				darkSampleL = 0.0f; darkSampleR = 0.0f;
+				for (int x = 0; x < 8; x++) {darkSampleL += post8L[x]; darkSampleR += post8R[x];}
+				darkSampleL /= 8.0f; darkSampleR /= 8.0f;
+			} if (spacing > 3) {
+				post4L[avgPos%4] = darkSampleL; post4R[avgPos%4] = darkSampleR;
+				darkSampleL = 0.0f; darkSampleR = 0.0f;
+				for (int x = 0; x < 4; x++) {darkSampleL += post4L[x]; darkSampleR += post4R[x];}
+				darkSampleL /= 4.0f; darkSampleR /= 4.0f;
+			} if (spacing > 1) {
+				post2L[avgPos%2] = darkSampleL; post2R[avgPos%2] = darkSampleR;
+				darkSampleL = 0.0f; darkSampleR = 0.0f;
+				for (int x = 0; x < 2; x++) {darkSampleL += post2L[x]; darkSampleR += post2R[x];}
+				darkSampleL /= 2.0f; darkSampleR /= 2.0f; 
+			} avgPos++;
+			inputSampleL = (inputSampleL*(1.0f-avgSlewL)) + (darkSampleL*avgSlewL);
+			inputSampleR = (inputSampleR*(1.0f-avgSlewR)) + (darkSampleR*avgSlewR);
+			//use the previously calculated depth of the filter
 		}
 		
 		if (!eqOff) {
@@ -734,14 +776,13 @@ int _airwindowsAlgorithm::reset(void) {
 	dBaXR = 1;
 	//Discontapeity
 	
-	for (int x = 0; x < 33; x++) {dram->avg32L[x] = 0.0; dram->avg32R[x] = 0.0;}
-	for (int x = 0; x < 17; x++) {dram->avg16L[x] = 0.0; dram->avg16R[x] = 0.0;}
-	for (int x = 0; x < 9; x++) {avg8L[x] = 0.0; avg8R[x] = 0.0;}
-	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0; avg4R[x] = 0.0;}
-	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0; avg2R[x] = 0.0;}
+	for (int x = 0; x < 33; x++) {dram->avg32L[x] = 0.0; dram->post32L[x] = 0.0; dram->avg32R[x] = 0.0; dram->post32R[x] = 0.0;}
+	for (int x = 0; x < 17; x++) {dram->avg16L[x] = 0.0; dram->post16L[x] = 0.0; dram->avg16R[x] = 0.0; dram->post16R[x] = 0.0;}
+	for (int x = 0; x < 9; x++) {avg8L[x] = 0.0; post8L[x] = 0.0; avg8R[x] = 0.0; post8R[x] = 0.0;}
+	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0; post4L[x] = 0.0; avg4R[x] = 0.0; post4R[x] = 0.0;}
+	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0; post2L[x] = 0.0; avg2R[x] = 0.0; post2R[x] = 0.0;}
 	avgPos = 0;
-	lastSlewL = 0.0; lastSlewR = 0.0;
-	lastSlewpleL = 0.0; lastSlewpleR = 0.0;
+	lastDarkL = 0.0; lastDarkL = 0.0;
 	//preTapeHack
 	
 	lFreqA = 1.0; lFreqB = 1.0;

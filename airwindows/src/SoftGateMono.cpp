@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SoftGateMono"
 #define AIRWINDOWS_DESCRIPTION "SoftGateMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','j' )
 #define AIRWINDOWS_KERNELS
 enum {
 

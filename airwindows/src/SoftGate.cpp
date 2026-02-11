@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SoftGate"
 #define AIRWINDOWS_DESCRIPTION "A gate that can mute hiss and smooth sample tails."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','i' )
 enum {
 
 	kParam_One =0,
