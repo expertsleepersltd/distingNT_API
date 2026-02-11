@@ -44,8 +44,9 @@ enum _NT_version
 	kNT_apiVersion10,				// Add parameterUiPrefixCallback. Compatible with v4-9.
 	kNT_apiVersion11,				// Add WAV streaming. Compatible with v4-10.
 	kNT_apiVersion12,				// Add parameterString(). Compatible with v4-11.
+	kNT_apiVersion13,				// Add bus count constants, and NT_updateParameterPages(). Compatible with v4-12.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion12
+	kNT_apiVersionCurrent 		= kNT_apiVersion13
 };
 
 /*
@@ -56,6 +57,18 @@ enum _NT_selector
 	kNT_selector_version,			// Return the API version this plug-in was compiled against. Value from _NT_version.
 	kNT_selector_numFactories,		// Return the number of factories defined by this plug-in.
 	kNT_selector_factoryInfo,		// Return a pointer to an _NT_factory.
+};
+
+/*
+ * Constants describing the available busses.
+ */
+enum
+{
+	kNT_numInputBusses	= 12,
+	kNT_numOutputBusses = 8,
+	kNT_numAuxBusses 	= 44,
+
+	kNT_lastBus			= kNT_numInputBusses + kNT_numOutputBusses + kNT_numAuxBusses,
 };
 
 /*
@@ -253,7 +266,7 @@ struct _NT_parameterPages
 
 // These two macros are used to build the following macros
 #define NT_PARAMETER_IO( n, m, d, u )	\
-		{ .name = n, .min = m, .max = 28, .def = d, .unit = u, .scaling = 0, .enumStrings = NULL },
+		{ .name = n, .min = m, .max = kNT_lastBus, .def = d, .unit = u, .scaling = 0, .enumStrings = NULL },
 #define NT_PARAMETER_OUTPUT_MODE( n )	\
 		{ .name = n, .min = 0, .max = 1, .def = 0, .unit = kNT_unitOutputMode, .scaling = 0, .enumStrings = NULL },
 
@@ -564,6 +577,12 @@ uint32_t	NT_parameterOffset(void);
  * May be called from a plug-in's step(), parameterChanged(), midiRealtime(), or midiMessage().
  */
 void		NT_updateParameterDefinition( uint32_t algorithmIndex, uint32_t parameterIndex );
+
+/*
+ * Call to let the host know that the plug-in's parameter pages have changed.
+ * i.e. self->parameterPages has been modified.
+ */
+void		NT_updateParameterPages( uint32_t algorithmIndex );
 
 // drawing - use from within draw() only
 //
