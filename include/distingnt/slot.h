@@ -59,6 +59,10 @@ public:
     int16_t			parameterPresetValue( uint32_t index ) const;
     // return the value of an algorithm's parameter, including the effect of any mapping
     int16_t			parameterValue( uint32_t index ) const;
+    // fill in buff[] with a null-terminated string representing the parameter value, and return the string length
+    // returns 0 if there is no string e.g. if the value is a simple numeric value
+    // buff[] should be at least of size kNT_parameterStringSize
+    uint32_t		parameterString( uint32_t index, char* buff ) const;
 
 };
 

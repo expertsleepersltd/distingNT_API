@@ -87,6 +87,9 @@ bool	draw( _NT_algorithm* self )
 			slot.parameterInfo( info, p );
 			int pv = slot.parameterPresetValue( p );
 			int v = slot.parameterValue( p );
+			char valueString[kNT_parameterStringSize];
+			int len = slot.parameterString( p, valueString );
+			
 			NT_drawText( 10, y, info.name );
 			y += 8;
 			char buff[16];
@@ -95,6 +98,9 @@ bool	draw( _NT_algorithm* self )
 			NT_drawText( 10 + 6*8, y, ":" );
 			NT_intToString( buff, v );
 			NT_drawText( 10 + 8*8, y, buff );
+			y += 8;
+			if ( len > 0 )
+				NT_drawText( 10, y, valueString );
 		}
 	}
 			
