@@ -386,6 +386,11 @@ enum { kNT_parameterUiPrefixSize = 16 };
 enum { kNT_parameterStringSize = 64 };
 
 /*
+ * Attribute tag to place a function in DRAM.
+ */
+#define _NT_DRAM_SECTION __attribute__ ((section ("._nt_dram")))
+
+/*
  * Structure that defines an algorithm factory.
  *
  * Returned from pluginEntry().

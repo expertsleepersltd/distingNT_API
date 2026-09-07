@@ -146,6 +146,7 @@ static const _NT_factory factory =
 	.parameterString = parameterString,
 };
 
+_NT_DRAM_SECTION
 uintptr_t pluginEntry( _NT_selector selector, uint32_t data )
 {
 	switch ( selector )
