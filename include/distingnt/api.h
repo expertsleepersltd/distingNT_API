@@ -137,6 +137,13 @@ struct _NT_globals
 };
 
 /*
+ * This constant offers a guarantee of how many frame buffers you can fit in the work buffer.
+ * i.e.
+ * _NT_globals.workBufferSizeBytes >= kNT_minimumStepsInWorkBuffer * _NT_globals.maxFramesPerStep * sizeof(float)
+ */
+enum { kNT_minimumStepsInWorkBuffer = 12 };
+
+/*
  * Structure used by calculateStaticRequirements() and initialise().
  */
 struct _NT_staticRequirements
