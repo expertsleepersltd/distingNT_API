@@ -28,6 +28,14 @@ def process( text ):
 				# after we have the mydsp alloction, the rest is per-instance data
 				if which == 1:
 					which = 2
+			else:
+				# new format for Faust 2.83.1
+				s = re.split( r'\s*fManager->info\(\".+\",\sdsp_memory_manager::.+,\s\d+,\s(\d+),\s(\d+),\s(\d+)\)', t )
+				if len(s) == 5:
+					mem[ which ] += int( s[1] )
+					# after we have the mydsp alloction, the rest is per-instance data
+					if which == 1:
+						which = 2
 
 	# stich the lines back into a single block of text
 	text = "".join( text )
