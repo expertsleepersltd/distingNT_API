@@ -193,10 +193,10 @@ for f in files:
 
 		while len( name ) < 3:
 			name += ' '
-		guid = [ 'A', name[0], name[1], name[2] ]
+		guid = [ 'A', name[0], name[1], name[-1] ]
 		while guid in guids:
 			i = ord( guid[3] ) + 1
-			while i in [ ord("'"), ord('"') ]:
+			while i in [ ord("'"), ord('"'), ord('\\') ]:
 				i += 1
 			i = ord(' ') + ( ( i - ord(' ') ) % ( ord('z') - ord(' ') ) )
 			guid[3] = chr( i )
