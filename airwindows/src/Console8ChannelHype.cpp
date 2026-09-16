@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console8ChannelHype"
 #define AIRWINDOWS_DESCRIPTION "Swaps out for Console8ChannelIn, for a brighter sparklier circuit."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','%' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','g' )
 #define AIRWINDOWS_KERNELS
 enum {
 

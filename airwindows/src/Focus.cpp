@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Focus"
 #define AIRWINDOWS_DESCRIPTION "Brings out clarity by distorting. Aggressive, subtle, flexible."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','o','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','o','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

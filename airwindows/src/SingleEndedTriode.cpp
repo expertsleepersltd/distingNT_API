@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SingleEndedTriode"
 #define AIRWINDOWS_DESCRIPTION "Unusual analog modeling effects."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

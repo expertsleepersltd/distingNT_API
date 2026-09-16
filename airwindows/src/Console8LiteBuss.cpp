@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console8LiteBuss"
 #define AIRWINDOWS_DESCRIPTION "Simplified Console8, working with just a single mix buss."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',')' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','$' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console7Crunch"
 #define AIRWINDOWS_DESCRIPTION "Shows you Cascade but with its EQ weighted for more edge and grit."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',' ' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','i' )
 #define AIRWINDOWS_KERNELS
 enum {
 

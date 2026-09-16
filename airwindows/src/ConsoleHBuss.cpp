@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleHBuss"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows console for hip-hop and music reinvention."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','2' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','-' )
 enum {
 
 	kParam_HIG =0,

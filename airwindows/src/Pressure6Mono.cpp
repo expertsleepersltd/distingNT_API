@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pressure6Mono"
 #define AIRWINDOWS_DESCRIPTION "Pressure6Mono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

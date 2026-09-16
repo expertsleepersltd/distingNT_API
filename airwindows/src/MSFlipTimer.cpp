@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MSFlipTimer"
 #define AIRWINDOWS_DESCRIPTION "A utility that swaps stereo with mono every few (1-10) minutes."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','S','F' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','S','r' )
 enum {
 
 	kParam_One =0,

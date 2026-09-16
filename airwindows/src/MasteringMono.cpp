@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MasteringMono"
 #define AIRWINDOWS_DESCRIPTION "MasteringMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

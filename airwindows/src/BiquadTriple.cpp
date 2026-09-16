@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadTriple"
 #define AIRWINDOWS_DESCRIPTION "A handy Airwindows cascaded biquad filter: steeper roll-off before resonance."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i',' ' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','g' )
 #define AIRWINDOWS_KERNELS
 enum {
 

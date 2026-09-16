@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestConsole3Channel"
 #define AIRWINDOWS_DESCRIPTION "An alternate algorithm for minimalist Console."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','m' )
 #define AIRWINDOWS_KERNELS
 enum {
 

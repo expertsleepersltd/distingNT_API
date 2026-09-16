@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Righteous4"
 #define AIRWINDOWS_DESCRIPTION "A final output stage for targeting dynamic range."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','i','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','i','4' )
 #define AIRWINDOWS_KERNELS
 enum {
 

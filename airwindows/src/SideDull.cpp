@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SideDull"
 #define AIRWINDOWS_DESCRIPTION "Like Sidepass, but a lowpass on the side channel. Treble-centerer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','l' )
 enum {
 
 	kParam_One =0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dynamics2Mono"
 #define AIRWINDOWS_DESCRIPTION "Dynamics2Mono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

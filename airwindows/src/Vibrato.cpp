@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Vibrato"
 #define AIRWINDOWS_DESCRIPTION "Lets you vibrato, chorus, flange, and make odd FM noises."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','i','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','i','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

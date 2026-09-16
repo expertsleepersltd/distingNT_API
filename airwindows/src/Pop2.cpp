@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pop2"
 #define AIRWINDOWS_DESCRIPTION "Adds control and punch to Pop."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','3' )
 #define AIRWINDOWS_KERNELS
 enum {
 

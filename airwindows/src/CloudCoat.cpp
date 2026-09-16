@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CloudCoat"
 #define AIRWINDOWS_DESCRIPTION "An array of blur effects with a taste for evil."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','u' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "OneCornerClip"
 #define AIRWINDOWS_DESCRIPTION "An ultimate full-bandwidth clipper."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','n','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','n','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

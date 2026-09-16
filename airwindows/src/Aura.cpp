@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Aura"
 #define AIRWINDOWS_DESCRIPTION "A new kind of resonant lowpass EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','u','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','u','a' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

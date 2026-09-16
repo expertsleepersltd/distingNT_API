@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Hype"
 #define AIRWINDOWS_DESCRIPTION "A treble softening experiment gone strangely awry :)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

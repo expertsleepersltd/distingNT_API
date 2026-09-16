@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "NaturalizeDither"
 #define AIRWINDOWS_DESCRIPTION "Deterministic dither that uses Benford Realness calculations for each sample."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','a','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','a','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

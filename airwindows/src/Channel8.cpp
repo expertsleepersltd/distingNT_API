@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Channel8"
 #define AIRWINDOWS_DESCRIPTION "Channel7 with updates from Capacitor2 and Slew3. More and better of what Channel is."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','8' )
 #define AIRWINDOWS_KERNELS
 enum {
 

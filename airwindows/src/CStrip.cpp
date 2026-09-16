@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CStrip"
 #define AIRWINDOWS_DESCRIPTION "An Airwindows channel strip."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','S','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','S','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console0Buss"
 #define AIRWINDOWS_DESCRIPTION "A radical, minimalist Console system."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','u' )
 enum {
 
 	kParam_One =0,

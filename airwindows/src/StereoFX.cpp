@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StereoFX"
 #define AIRWINDOWS_DESCRIPTION "An aggressive stereo widener. Historical note: this post included in full as it's right after my Dad died, and includes my thanks to Airwindows folks for supporting me through that:"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','X' )
 enum {
 
 	kParam_One =0,

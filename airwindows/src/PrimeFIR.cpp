@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PrimeFIR"
 #define AIRWINDOWS_DESCRIPTION "A mostly linear-phase brickwall with a taste for the bizarre!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','R' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

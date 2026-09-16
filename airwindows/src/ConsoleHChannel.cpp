@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleHChannel"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows console for hip-hop and music reinvention."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','3' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','.' )
 enum {
 
 	kParam_TRM =0,
@@ -886,7 +886,7 @@ int _airwindowsAlgorithm::reset(void) {
 	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0; post4L[x] = 0.0; avg4R[x] = 0.0; post4R[x] = 0.0;}
 	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0; post2L[x] = 0.0; avg2R[x] = 0.0; post2R[x] = 0.0;}
 	avgPos = 0;
-	lastDarkL = 0.0; lastDarkL = 0.0;
+	lastDarkL = 0.0; lastDarkR = 0.0;
 	//preTapeHack
 	
 	lFreqA = 1.0; lFreqB = 1.0;

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Crystal"
 #define AIRWINDOWS_DESCRIPTION "A tone shaper and buss soft-clipper."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

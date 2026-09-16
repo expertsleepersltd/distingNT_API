@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Surge"
 #define AIRWINDOWS_DESCRIPTION "A compressor for accentuating beats and pulses."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','e' )
 enum {
 
 	kParam_One =0,

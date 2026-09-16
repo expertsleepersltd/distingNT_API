@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DustBunny"
 #define AIRWINDOWS_DESCRIPTION "Unpredictable distorty noise, like dust wedged under your turntable needle."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u',' ' )
 #define AIRWINDOWS_KERNELS
 enum {
 

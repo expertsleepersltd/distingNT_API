@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Srsly3"
 #define AIRWINDOWS_DESCRIPTION "Srsly2, with a Nonlin control to analogify the filters."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','3' )
 enum {
 
 	kParam_One =0,

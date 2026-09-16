@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PlatinumSlew"
 #define AIRWINDOWS_DESCRIPTION "The best easy-to-use slew clipper."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','l','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','l','w' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "EverySlew"
 #define AIRWINDOWS_DESCRIPTION "A wide variety of unique sound processing tools."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','v','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','v','w' )
 #define AIRWINDOWS_KERNELS
 enum {
 

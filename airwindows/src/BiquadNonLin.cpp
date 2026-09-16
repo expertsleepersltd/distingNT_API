@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadNonLin"
 #define AIRWINDOWS_DESCRIPTION "Capacitor2, but for biquad filtering."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

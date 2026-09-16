@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Average"
 #define AIRWINDOWS_DESCRIPTION "A distinctive sort of lowpass filter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','v','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','v','e' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

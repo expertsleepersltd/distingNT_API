@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestConsole2Buss"
 #define AIRWINDOWS_DESCRIPTION "The distributed filter version of PurestConsole."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

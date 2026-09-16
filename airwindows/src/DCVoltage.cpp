@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DCVoltage"
 #define AIRWINDOWS_DESCRIPTION "Literally a DC control voltage, in a plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','C','V' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','C','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

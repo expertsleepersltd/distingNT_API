@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadHiLo"
 #define AIRWINDOWS_DESCRIPTION "The highpass and lowpass filter in ConsoleX."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

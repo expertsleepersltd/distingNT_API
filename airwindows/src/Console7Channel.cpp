@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console7Channel"
 #define AIRWINDOWS_DESCRIPTION "Adds anti-alias filtering and special saturation curves tied to the slider position."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

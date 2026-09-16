@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Sidepass"
 #define AIRWINDOWS_DESCRIPTION "A simple utility plugin, a highpass on the side channel. Mono-maker."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','s' )
 enum {
 
 	kParam_One =0,

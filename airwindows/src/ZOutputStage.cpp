@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZOutputStage"
 #define AIRWINDOWS_DESCRIPTION "The output clipping from the Emu e6400 style Z filters."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','O','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','O','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

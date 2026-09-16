@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PointyDeluxe"
 #define AIRWINDOWS_DESCRIPTION "Devours all mix space."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

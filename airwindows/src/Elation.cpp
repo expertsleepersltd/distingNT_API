@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Elation"
 #define AIRWINDOWS_DESCRIPTION "A re-release of another old Character plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','l','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','l','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

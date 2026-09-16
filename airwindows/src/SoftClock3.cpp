@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SoftClock3"
-#define AIRWINDOWS_DESCRIPTION "SoftClock3"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','h' )
+#define AIRWINDOWS_DESCRIPTION "A groove-oriented time reference."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','o','3' )
 enum {
 
 	kParam_A =0,

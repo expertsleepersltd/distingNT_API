@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BuildATPDF"
 #define AIRWINDOWS_DESCRIPTION "A dither-making toolkit."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','F' )
 #define AIRWINDOWS_KERNELS
 enum {
 

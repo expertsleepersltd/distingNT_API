@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "AutoPan"
 #define AIRWINDOWS_DESCRIPTION "For getting some organic stereo movement into your mix."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','u','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','u','n' )
 enum {
 
 	kParam_One =0,

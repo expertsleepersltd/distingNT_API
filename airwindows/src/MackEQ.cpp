@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MackEQ"
 #define AIRWINDOWS_DESCRIPTION "The Mackie distortion but with treble and bass controls added."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','Q' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

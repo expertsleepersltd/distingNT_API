@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DubPlate2"
 #define AIRWINDOWS_DESCRIPTION "Like an ITB mastering house for electronic music."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','2' )
 enum {
 
 	kParam_A =0,

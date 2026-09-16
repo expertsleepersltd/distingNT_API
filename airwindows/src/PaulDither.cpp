@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PaulDither"
 #define AIRWINDOWS_DESCRIPTION "A highpassed TPDF dither. (quieter, airier)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

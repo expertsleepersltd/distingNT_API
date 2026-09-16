@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Edge"
 #define AIRWINDOWS_DESCRIPTION "A seven-stage distortion with Hypersonic filtering and tone shaping controls."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','d','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','d','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

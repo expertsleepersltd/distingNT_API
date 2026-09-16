@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "curvemono"
 #define AIRWINDOWS_DESCRIPTION "curvemono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','c','u','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','c','u','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

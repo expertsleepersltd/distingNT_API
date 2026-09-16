@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ToTape7"
 #define AIRWINDOWS_DESCRIPTION "Airwindows tape emulation with Bias and Dubly."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','V' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','7' )
 enum {
 
 	kParam_A =0,

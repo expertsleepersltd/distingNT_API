@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BezEQ"
 #define AIRWINDOWS_DESCRIPTION "A strange, alien three-band shelving EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','z' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','Q' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

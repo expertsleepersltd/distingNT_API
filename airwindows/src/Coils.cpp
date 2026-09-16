@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Coils"
 #define AIRWINDOWS_DESCRIPTION "Models the types of distortion you'll find in transformers."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

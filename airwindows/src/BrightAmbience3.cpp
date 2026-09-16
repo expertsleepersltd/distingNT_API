@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BrightAmbience3"
 #define AIRWINDOWS_DESCRIPTION "Adds undersampling for high sample rates, and better feedback."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','3' )
 enum {
 
 	kParam_One =0,

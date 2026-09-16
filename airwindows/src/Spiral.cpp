@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Spiral"
 #define AIRWINDOWS_DESCRIPTION "The new best smoothest distortion algorithm."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

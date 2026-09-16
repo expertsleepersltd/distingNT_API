@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "uLawDecode"
 #define AIRWINDOWS_DESCRIPTION "A Console-like encode/decode pair, but much more extreme."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','u','L','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','u','L','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

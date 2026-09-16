@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "LRConvolve"
 #define AIRWINDOWS_DESCRIPTION "Multiplies each channel by the other!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','C' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','e' )
 enum {
 
 	//Add your parameters here...

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BeziComp"
 #define AIRWINDOWS_DESCRIPTION "A radical compressor that eliminates aliasing!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','!' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','p' )
 enum {
 
 	kParam_A =0,

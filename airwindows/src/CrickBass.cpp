@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CrickBass"
 #define AIRWINDOWS_DESCRIPTION "A flexible but aggressive bass tone for dual pickups."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','s' )
 enum {
 
 	kParam_One =0,

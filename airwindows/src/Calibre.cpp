@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Calibre"
 #define AIRWINDOWS_DESCRIPTION "A re-release of another old Character plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

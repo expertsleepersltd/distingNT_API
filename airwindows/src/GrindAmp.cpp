@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "GrindAmp"
 #define AIRWINDOWS_DESCRIPTION "A heavier amp sim for many purposes."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','r','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

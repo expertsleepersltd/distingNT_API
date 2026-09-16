@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "GoldenSlew"
 #define AIRWINDOWS_DESCRIPTION "A multistage slew clipper based on the Golden Ratio."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','o','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','o','w' )
 #define AIRWINDOWS_KERNELS
 enum {
 

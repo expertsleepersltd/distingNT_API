@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Zoom"
 #define AIRWINDOWS_DESCRIPTION "A bank of Density-like waveshapers for subtly modulating peak energy."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','o','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','o','m' )
 #define AIRWINDOWS_KERNELS
 enum {
 

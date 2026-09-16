@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TubeDesk"
 #define AIRWINDOWS_DESCRIPTION "A tube recording console type tone coloring."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

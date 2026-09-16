@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StereoDoubler"
 #define AIRWINDOWS_DESCRIPTION "Like GlitchShifter optimized for pitch shift doubling and tripling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','r' )
 enum {
 
 	kParam_One =0,

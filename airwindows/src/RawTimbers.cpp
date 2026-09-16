@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "RawTimbers"
 #define AIRWINDOWS_DESCRIPTION "Just the quantization from Dither Me Timbers… and the opposite, as a brightener."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','a','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','a','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

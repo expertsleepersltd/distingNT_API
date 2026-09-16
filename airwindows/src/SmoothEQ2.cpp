@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SmoothEQ2"
 #define AIRWINDOWS_DESCRIPTION "A wildly intuitive vibe EQ with clarity and intensity."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

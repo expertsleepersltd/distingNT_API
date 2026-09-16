@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VerbThic"
 #define AIRWINDOWS_DESCRIPTION "A classic artificial reverb for being opaque and textured."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','c' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

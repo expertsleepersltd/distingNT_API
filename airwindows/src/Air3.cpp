@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Air3"
 #define AIRWINDOWS_DESCRIPTION "Creates a new form of air-band EQ based on Kalman filtering."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','3' )
 #define AIRWINDOWS_KERNELS
 enum {
 

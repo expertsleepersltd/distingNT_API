@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TapeDither"
 #define AIRWINDOWS_DESCRIPTION "TPDF dither with noise like reel-to-reel tape."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

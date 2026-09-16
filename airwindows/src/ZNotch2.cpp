@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZNotch2"
 #define AIRWINDOWS_DESCRIPTION "Acts more like the Emu e6400 Ultra phaser in motion, with coefficient interpolation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','N','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','N','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

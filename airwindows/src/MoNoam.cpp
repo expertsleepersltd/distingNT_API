@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MoNoam"
 #define AIRWINDOWS_DESCRIPTION "Gives you variations on mono, mid, and side in different channels."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','N' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','m' )
 enum {
 
 	kParam_One =0,

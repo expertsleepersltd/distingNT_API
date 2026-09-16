@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StudioTan"
 #define AIRWINDOWS_DESCRIPTION "All the 'non-dither' dithers, up to date and convenient."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

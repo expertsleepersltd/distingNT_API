@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestDrive"
 #define AIRWINDOWS_DESCRIPTION "The magic saturation plugin of subtlety and French House tone."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

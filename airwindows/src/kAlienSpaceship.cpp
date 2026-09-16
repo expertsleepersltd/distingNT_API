@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kAlienSpaceship"
 #define AIRWINDOWS_DESCRIPTION "An unreal realistic reverb."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','A','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','A','p' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

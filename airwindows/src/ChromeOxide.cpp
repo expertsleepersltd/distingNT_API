@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChromeOxide"
 #define AIRWINDOWS_DESCRIPTION "An alternate path to vibey old tape sonics."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','g' )
 #define AIRWINDOWS_KERNELS
 enum {
 

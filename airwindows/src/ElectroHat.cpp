@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ElectroHat"
 #define AIRWINDOWS_DESCRIPTION "A hi-hat tone generator that uses the original sound as a control voltage."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','l','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','l','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

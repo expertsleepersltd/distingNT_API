@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ClipSoftly"
 #define AIRWINDOWS_DESCRIPTION "ClipOnly2 but as a softclipper: a very handy building block."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l',' ' )
 #define AIRWINDOWS_KERNELS
 enum {
 

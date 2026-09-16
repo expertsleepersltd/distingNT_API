@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Mojo"
 #define AIRWINDOWS_DESCRIPTION "A biggenator that also works as a loudenator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CreamCoat"
 #define AIRWINDOWS_DESCRIPTION "A swiss army knife reverb with soft undersampling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','t' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console8BussHype"
 #define AIRWINDOWS_DESCRIPTION "Swaps out for Console8BussIn, for a brighter sparklier circuit."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','!' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

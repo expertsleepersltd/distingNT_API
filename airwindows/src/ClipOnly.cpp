@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ClipOnly"
 #define AIRWINDOWS_DESCRIPTION "A clipper plugin that suppresses the brightness of digital clipping without affecting unclipped samples."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

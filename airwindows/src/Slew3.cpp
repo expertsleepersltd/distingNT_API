@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Slew3"
 #define AIRWINDOWS_DESCRIPTION "A new approach to slew clipping meant for a more analog-like darkening effect."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','3' )
 #define AIRWINDOWS_KERNELS
 enum {
 

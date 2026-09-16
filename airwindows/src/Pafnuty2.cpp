@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pafnuty2"
 #define AIRWINDOWS_DESCRIPTION "A Chebyshev filter, that adds harmonics, and fits in the VCV Rack port."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','2' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

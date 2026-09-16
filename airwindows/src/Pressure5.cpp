@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pressure5"
 #define AIRWINDOWS_DESCRIPTION "Expands Pressure4 with after-boost and built-in ClipOnly2."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','5' )
 enum {
 
 	kParam_One =0,

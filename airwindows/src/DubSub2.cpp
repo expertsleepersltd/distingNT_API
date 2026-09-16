@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DubSub2"
 #define AIRWINDOWS_DESCRIPTION "The essence of the Airwindows head bump."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','3' )
 enum {
 
 	kParam_A =0,

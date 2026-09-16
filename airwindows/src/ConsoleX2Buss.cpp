@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleX2Buss"
 #define AIRWINDOWS_DESCRIPTION "ConsoleX2Buss"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',';' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','6' )
 enum {
 
 	kParam_HIG =0,

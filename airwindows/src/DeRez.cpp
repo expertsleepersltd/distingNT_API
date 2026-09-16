@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeRez"
 #define AIRWINDOWS_DESCRIPTION "An analog-style bit and sample rate crusher with continuous adjustments. This entry includes the Patreon blurb from mid-2018, because the things it says about the build systems, what they target and why I'm doing it, are still relevant today. That makes that stuff its own sort of Airwindowspedia entry as part of the DeRez entry."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','R' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','!' )
 #define AIRWINDOWS_KERNELS
 enum {
 

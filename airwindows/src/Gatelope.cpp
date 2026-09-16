@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Gatelope"
 #define AIRWINDOWS_DESCRIPTION "A special gate that applies filters."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

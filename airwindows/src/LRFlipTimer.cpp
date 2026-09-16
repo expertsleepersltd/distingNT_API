@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "LRFlipTimer"
 #define AIRWINDOWS_DESCRIPTION "A utility that swaps Left with Right every few (1-10) minutes."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','F' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','r' )
 enum {
 
 	kParam_One =0,

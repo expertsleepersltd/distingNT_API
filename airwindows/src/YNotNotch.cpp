@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "YNotNotch"
 #define AIRWINDOWS_DESCRIPTION "Soft and smooth to nasty, edgy texture-varying filtering, no control smoothing."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','N','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','N','h' )
 #define AIRWINDOWS_KERNELS
 enum {
 

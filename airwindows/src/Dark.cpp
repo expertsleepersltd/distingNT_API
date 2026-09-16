@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dark"
 #define AIRWINDOWS_DESCRIPTION "A wordlength reducer that gives your music a blacker backdrop."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','a','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','a','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

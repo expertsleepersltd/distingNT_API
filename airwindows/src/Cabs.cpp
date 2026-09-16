@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Cabs"
 #define AIRWINDOWS_DESCRIPTION "An Airwindows guitar speaker cabinet simulator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

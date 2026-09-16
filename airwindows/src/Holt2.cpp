@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Holt2"
 #define AIRWINDOWS_DESCRIPTION "A bass-cab-like resonant lowpass filter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','o','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','o','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

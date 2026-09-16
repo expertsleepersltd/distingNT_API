@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Infrasonic"
 #define AIRWINDOWS_DESCRIPTION "A very steep subsonic filter, built like Ultrasonic."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','c' )
 #define AIRWINDOWS_KERNELS
 enum {
 

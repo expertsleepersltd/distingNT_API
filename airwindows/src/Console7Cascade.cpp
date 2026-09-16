@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console7Cascade"
 #define AIRWINDOWS_DESCRIPTION "A drop-in replacement for Console7Channel that allows for MUCH higher gain."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ToTape8Mono"
 #define AIRWINDOWS_DESCRIPTION "ToTape8Mono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','Y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

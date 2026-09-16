@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Creature"
 #define AIRWINDOWS_DESCRIPTION "A soft slew saturator, a new class of noisechanger."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

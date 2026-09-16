@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Isolator"
 #define AIRWINDOWS_DESCRIPTION "A steep highpass or lowpass filter, like you might find in a speaker crossover."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','s','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','s','r' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

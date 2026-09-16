@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Tape"
 #define AIRWINDOWS_DESCRIPTION "Simplified, all-purpose tape mojo: my personal jam."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

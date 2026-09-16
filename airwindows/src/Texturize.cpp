@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Texturize"
 #define AIRWINDOWS_DESCRIPTION "A hidden-noise plugin for adding sonic texture to things."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','e','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','e','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Deckwrecka"
 #define AIRWINDOWS_DESCRIPTION "Fattens and dirties up beats."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','a' )
 #define AIRWINDOWS_KERNELS
 enum {
 

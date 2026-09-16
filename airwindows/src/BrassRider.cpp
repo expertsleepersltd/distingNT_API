@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BrassRider"
 #define AIRWINDOWS_DESCRIPTION "One Weird Trick for drum overheads in metal!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','r' )
 enum {
 
 	kParam_One =0,

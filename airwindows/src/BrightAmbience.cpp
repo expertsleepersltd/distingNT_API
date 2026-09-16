@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BrightAmbience"
 #define AIRWINDOWS_DESCRIPTION "A plugin for very bright gated reverbs."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

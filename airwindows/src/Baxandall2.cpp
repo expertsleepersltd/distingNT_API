@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Baxandall2"
 #define AIRWINDOWS_DESCRIPTION "Baxandall, extended and made more powerful."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

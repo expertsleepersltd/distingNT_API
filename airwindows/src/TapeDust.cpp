@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TapeDust"
 #define AIRWINDOWS_DESCRIPTION "Just a special treble-erode noise, a ‘slew noise’ plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

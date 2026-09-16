@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "XRegion"
 #define AIRWINDOWS_DESCRIPTION "Distorted staggered bandpasses, for extreme soundmangling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','R','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','R','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

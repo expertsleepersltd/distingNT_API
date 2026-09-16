@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Balanced"
 #define AIRWINDOWS_DESCRIPTION "Lets you run an XLR input into a stereo input, sum it to mono, and use it."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','d' )
 enum {
 
 	kParam_One =0,

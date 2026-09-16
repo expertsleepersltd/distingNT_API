@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleX2Pre"
 #define AIRWINDOWS_DESCRIPTION "ConsoleX2Pre"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','=' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','8' )
 #define AIRWINDOWS_KERNELS
 enum {
 

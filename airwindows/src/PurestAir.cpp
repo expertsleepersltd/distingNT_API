@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestAir"
 #define AIRWINDOWS_DESCRIPTION "A brightness experiment."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

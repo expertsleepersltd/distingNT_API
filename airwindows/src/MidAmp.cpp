@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MidAmp"
 #define AIRWINDOWS_DESCRIPTION "A clean amp sim meant to work like a loud Twin or something of that nature."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','i','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','i','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

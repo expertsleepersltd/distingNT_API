@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HighGlossDither"
 #define AIRWINDOWS_DESCRIPTION "A hybrid between shiny dither and truncation! Unnatural science experiment."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

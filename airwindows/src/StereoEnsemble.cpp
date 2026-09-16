@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StereoEnsemble"
 #define AIRWINDOWS_DESCRIPTION "A sort of hyperchorus blast from the past."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','e' )
 enum {
 
 	kParam_One =0,

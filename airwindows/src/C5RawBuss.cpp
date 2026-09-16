@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "C5RawBuss"
 #define AIRWINDOWS_DESCRIPTION "The original Console5 algorithm, with optional very gentle DC suppression."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','5','R' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','5','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TakeCare"
 #define AIRWINDOWS_DESCRIPTION "A lush chorus ensemble universe."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','e' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 enum {
 

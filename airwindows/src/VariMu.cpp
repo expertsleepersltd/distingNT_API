@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VariMu"
 #define AIRWINDOWS_DESCRIPTION "A more organic variation on Pressure (a compressor)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','a','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','a','u' )
 #define AIRWINDOWS_KERNELS
 enum {
 

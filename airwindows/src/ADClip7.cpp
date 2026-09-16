@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ADClip7"
 #define AIRWINDOWS_DESCRIPTION "The ultimate Airwindows loudness maximizer/ peak control."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','D','C' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','D','7' )
 #define AIRWINDOWS_KERNELS
 enum {
 

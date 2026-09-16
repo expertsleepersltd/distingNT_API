@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Preponderant"
 #define AIRWINDOWS_DESCRIPTION "Airwindows Anti-Soothe, a strange tone intensifier and balancer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','t' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

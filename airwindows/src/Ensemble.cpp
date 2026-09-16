@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Ensemble"
 #define AIRWINDOWS_DESCRIPTION "A weird flangey little modulation effect."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','n','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','n','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

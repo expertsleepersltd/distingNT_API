@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeRez2"
 #define AIRWINDOWS_DESCRIPTION "Brings more authentic retro-digital hardware tones."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','S' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

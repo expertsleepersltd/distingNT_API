@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "YNotBandpass"
 #define AIRWINDOWS_DESCRIPTION "Soft and smooth to nasty, edgy texture-varying filtering, no control smoothing."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','N','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','N','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

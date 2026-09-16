@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadStereo"
 #define AIRWINDOWS_DESCRIPTION "BiquadStereo"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','y' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','q' )
 enum {
 
 	kParam_One =0,

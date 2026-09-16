@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ButterComp2"
 #define AIRWINDOWS_DESCRIPTION "Improved ButterComp with an output control and sound upgrades."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

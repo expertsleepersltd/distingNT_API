@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "UltrasonX"
 #define AIRWINDOWS_DESCRIPTION "A method for rolling your own Console-type systems with total control over your ultrasonic filtering."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','U','l','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','U','l','X' )
 #define AIRWINDOWS_KERNELS
 enum {
 

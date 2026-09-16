@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TripleSpread"
 #define AIRWINDOWS_DESCRIPTION "A stereo tripler with extra wideness and GlitchShifter processing."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','d' )
 enum {
 
 	kParam_One =0,

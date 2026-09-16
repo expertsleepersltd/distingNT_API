@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Inflamer"
 #define AIRWINDOWS_DESCRIPTION "An Airwindowsized take on the waveshapers in Oxford Inflator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

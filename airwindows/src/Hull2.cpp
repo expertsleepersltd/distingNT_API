@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Hull2"
 #define AIRWINDOWS_DESCRIPTION "A very clear three-band EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','u','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','u','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BrightAmbience2"
 #define AIRWINDOWS_DESCRIPTION "More BrightAmbience with better tone and more slapbacky effects."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','r','2' )
 enum {
 
 	kParam_One =0,

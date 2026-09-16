@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kBeyond"
 #define AIRWINDOWS_DESCRIPTION "A recital hall."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','B','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','B','d' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

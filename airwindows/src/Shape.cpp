@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Shape"
 #define AIRWINDOWS_DESCRIPTION "An asymmetrical waveshaper for peak manipulating."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','h','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','h','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Melt"
 #define AIRWINDOWS_DESCRIPTION "A wobbly chorusy weird diffuse effect."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','e','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','e','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

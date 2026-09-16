@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console9BussMono"
 #define AIRWINDOWS_DESCRIPTION "Console9BussMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','/' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','*' )
 #define AIRWINDOWS_KERNELS
 enum {
 

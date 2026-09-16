@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Cabs2"
 #define AIRWINDOWS_DESCRIPTION "Uses really phasey filters to be a speaker cabinet simulator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

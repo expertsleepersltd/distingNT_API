@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Loud"
 #define AIRWINDOWS_DESCRIPTION "Distortion and demolition of air molecules, modeled."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

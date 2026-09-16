@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console9Buss"
 #define AIRWINDOWS_DESCRIPTION "Just the summing from ConsoleX."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','.' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',')' )
 enum {
 
 	kParam_One =0,

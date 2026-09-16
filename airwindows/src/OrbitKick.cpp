@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "OrbitKick"
 #define AIRWINDOWS_DESCRIPTION "A bass generator and kick drum reinforcer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','r','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','r','k' )
 enum {
 
 	kParam_One =0,

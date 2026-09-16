@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Density"
 #define AIRWINDOWS_DESCRIPTION "A Swiss Army Knife of saturation/antisaturation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

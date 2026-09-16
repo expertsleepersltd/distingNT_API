@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Monitoring"
 #define AIRWINDOWS_DESCRIPTION "Your one-stop shop for final 2-buss work!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','g' )
 enum {
 
 	kParam_One =0,

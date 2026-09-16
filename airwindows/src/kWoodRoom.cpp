@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kWoodRoom"
 #define AIRWINDOWS_DESCRIPTION "A small wooden performing space."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','W','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','W','m' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

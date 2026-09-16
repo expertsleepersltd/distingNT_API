@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BigAmp"
 #define AIRWINDOWS_DESCRIPTION "A very flexible amplike thing with a taste for the bizarre."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Slew4"
-#define AIRWINDOWS_DESCRIPTION "Slew4"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','h' )
+#define AIRWINDOWS_DESCRIPTION "Tape compression without the tape, for brightness control."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','4' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Energy"
 #define AIRWINDOWS_DESCRIPTION "Electrifying fixed-frequency treble boosts."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','n','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','n','y' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

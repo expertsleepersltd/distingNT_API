@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pyewacket"
 #define AIRWINDOWS_DESCRIPTION "An old school compressor for high definition transients. Adds no fatness, just energy."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','y','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','y','t' )
 enum {
 
 	kParam_One =0,

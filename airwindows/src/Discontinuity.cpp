@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Discontinuity"
 #define AIRWINDOWS_DESCRIPTION "Models air under intense loudness."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i',' ' )
 #define AIRWINDOWS_KERNELS
 enum {
 

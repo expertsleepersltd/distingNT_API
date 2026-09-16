@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Slew2"
 #define AIRWINDOWS_DESCRIPTION "Works like a de-esser or acceleration limiter: controls extreme highs."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

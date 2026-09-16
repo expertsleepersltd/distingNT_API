@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Capacitor2"
 #define AIRWINDOWS_DESCRIPTION "Capacitor with extra analog modeling and mojo."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','3' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

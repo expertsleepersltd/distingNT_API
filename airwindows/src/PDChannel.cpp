@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PDChannel"
 #define AIRWINDOWS_DESCRIPTION "Console5 and PurestDrive, sittin’ in a tree… (i.e. both at once, on channels and buss)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','D','C' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','D','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

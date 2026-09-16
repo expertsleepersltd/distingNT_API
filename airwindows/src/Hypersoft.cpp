@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Hypersoft"
 #define AIRWINDOWS_DESCRIPTION "A more extreme form of soft-clipper."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

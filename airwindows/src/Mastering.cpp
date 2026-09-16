@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Mastering"
 #define AIRWINDOWS_DESCRIPTION "Airwindows style, and can do things nothing else can!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','g' )
 enum {
 
 	kParam_A =0,

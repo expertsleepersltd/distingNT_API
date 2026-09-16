@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kPlateD"
 #define AIRWINDOWS_DESCRIPTION "A plate reverb, not unlike its namesake atop Abbey Road."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','P','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','P','D' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "FinalClip"
 #define AIRWINDOWS_DESCRIPTION "One stage of ADClip8 set up to clip +6dB for Final Cut Pro."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','i','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','i','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

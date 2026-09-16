@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TapeBias"
 #define AIRWINDOWS_DESCRIPTION "A new piece of ToTape allowing you to underbias or overbias."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

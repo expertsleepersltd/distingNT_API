@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Beam"
 #define AIRWINDOWS_DESCRIPTION "A wordlength reducer that tries to heighten sonority."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','m' )
 #define AIRWINDOWS_KERNELS
 enum {
 

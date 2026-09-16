@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VerbTiny"
 #define AIRWINDOWS_DESCRIPTION "A classic artificial reverb that expands reverb shape."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','e','y' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

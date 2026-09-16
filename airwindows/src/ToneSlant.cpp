@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ToneSlant"
 #define AIRWINDOWS_DESCRIPTION "A super-transparent ‘tilt EQ’ with very low Q."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','t' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

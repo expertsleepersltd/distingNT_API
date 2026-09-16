@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SurgeTide"
 #define AIRWINDOWS_DESCRIPTION "A surge and flow dynamics plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','f' )
 enum {
 
 	kParam_One =0,

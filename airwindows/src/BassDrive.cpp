@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BassDrive"
 #define AIRWINDOWS_DESCRIPTION "An old secret weapon, like a kind of bass amp."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Noise"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows deep noise oscillator, as a sound reinforcer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

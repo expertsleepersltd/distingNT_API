@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pafnuty"
 #define AIRWINDOWS_DESCRIPTION "A Chebyshev filter, that adds harmonics."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

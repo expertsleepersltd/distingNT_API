@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BassKit"
 #define AIRWINDOWS_DESCRIPTION "Centered bass reinforcement with subs fill. Clean and controllable."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','t' )
 enum {
 
 	kParam_One =0,

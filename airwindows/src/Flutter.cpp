@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Flutter"
 #define AIRWINDOWS_DESCRIPTION "The flutter from ToTape6, standalone."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','s' )
 enum {
 
 	kParam_One =0,

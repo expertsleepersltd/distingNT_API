@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SurgeTideMono"
 #define AIRWINDOWS_DESCRIPTION "SurgeTideMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

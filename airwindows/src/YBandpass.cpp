@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "YBandpass"
 #define AIRWINDOWS_DESCRIPTION "Soft and smooth to nasty, edgy texture-varying filtering."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','B','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Y','B','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

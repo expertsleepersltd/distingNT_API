@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SquareRoot"
 #define AIRWINDOWS_DESCRIPTION "Has new discoveries in soft saturation!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','q','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','q','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

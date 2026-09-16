@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ToTape6"
 #define AIRWINDOWS_DESCRIPTION "Airwindows tape emulation for 2020!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','U' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','6' )
 #define AIRWINDOWS_KERNELS
 enum {
 

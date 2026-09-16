@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Acceleration"
 #define AIRWINDOWS_DESCRIPTION "An acceleration limiter that tames edge, leaves brightness."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','c','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','c','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

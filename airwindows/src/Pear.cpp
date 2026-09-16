@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pear"
 #define AIRWINDOWS_DESCRIPTION "The testbed for a new filter, implemented as a highpass/lowpass shelf."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','r' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 enum {
 

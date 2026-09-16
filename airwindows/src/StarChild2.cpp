@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StarChild2"
 #define AIRWINDOWS_DESCRIPTION "A weird digital ambience/echo plugin adapted to high sample rates."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','2' )
 enum {
 
 	kParam_One =0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Channel4"
 #define AIRWINDOWS_DESCRIPTION "A tone coloring plugin that gives more of an analog feel."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','4' )
 #define AIRWINDOWS_KERNELS
 enum {
 

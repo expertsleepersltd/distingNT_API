@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Swell"
 #define AIRWINDOWS_DESCRIPTION "Dial-an-attack, like sidechaining."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','w','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','w','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

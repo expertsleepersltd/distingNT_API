@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CStrip2"
 #define AIRWINDOWS_DESCRIPTION "Refines and optimizes CStrip, by request!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','S','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','S','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kCathedral4"
 #define AIRWINDOWS_DESCRIPTION "The Cathedral sound expressed as distant space."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','4' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

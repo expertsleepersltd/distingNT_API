@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "EdIsDim"
 #define AIRWINDOWS_DESCRIPTION "Mid/side conversion utility plugins."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','d','I' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','d','m' )
 enum {
 
 	kParam_One =0,

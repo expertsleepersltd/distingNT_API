@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "StoneFireComp"
 #define AIRWINDOWS_DESCRIPTION "Some of the dynamics for ConsoleX."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','t','p' )
 enum {
 
 	kParam_B =0,

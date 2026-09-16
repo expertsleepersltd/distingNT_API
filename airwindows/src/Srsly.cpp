@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Srsly"
 #define AIRWINDOWS_DESCRIPTION "A psychoacoustic stereo processor."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','y' )
 enum {
 
 	kParam_One =0,

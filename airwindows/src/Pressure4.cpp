@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pressure4"
 #define AIRWINDOWS_DESCRIPTION "A compressor adjustable between vari-mu and ‘new york’ peak-retaining behaviors."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','4' )
 enum {
 
 	kParam_One =0,

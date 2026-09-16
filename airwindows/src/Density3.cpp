@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Density3"
-#define AIRWINDOWS_DESCRIPTION "Density3"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','p' )
+#define AIRWINDOWS_DESCRIPTION "Refines Density to keep up with recent developments."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','7' )
 #define AIRWINDOWS_KERNELS
 enum {
 

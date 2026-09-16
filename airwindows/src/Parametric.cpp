@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Parametric"
 #define AIRWINDOWS_DESCRIPTION "Three bands of ConsoleX EQ in advance."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','c' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

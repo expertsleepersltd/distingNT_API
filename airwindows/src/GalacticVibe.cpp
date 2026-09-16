@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "GalacticVibe"
 #define AIRWINDOWS_DESCRIPTION "The stereo vibrato from the original Galactic reverb."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','e' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 enum {
 

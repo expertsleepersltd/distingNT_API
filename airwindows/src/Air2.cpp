@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Air2"
 #define AIRWINDOWS_DESCRIPTION "A different bright EQ with silk tone and high sample rate support."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

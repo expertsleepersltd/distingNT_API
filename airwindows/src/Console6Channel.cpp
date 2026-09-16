@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console6Channel"
 #define AIRWINDOWS_DESCRIPTION "A new more intense Console that peaks at lower dB."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

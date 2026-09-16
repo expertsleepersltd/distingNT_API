@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Sweeten"
 #define AIRWINDOWS_DESCRIPTION "Where you can find super-clean second harmonic."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','w','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','w','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

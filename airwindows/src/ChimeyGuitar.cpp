@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChimeyGuitar"
 #define AIRWINDOWS_DESCRIPTION "A supremely compressible instrument amp."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

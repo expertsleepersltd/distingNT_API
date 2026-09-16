@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChimeyGuitar2"
 #define AIRWINDOWS_DESCRIPTION "A wilder ChimeyGuitar."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','3' )
 #define AIRWINDOWS_KERNELS
 enum {
 

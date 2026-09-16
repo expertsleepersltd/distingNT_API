@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ConsoleHPre"
 #define AIRWINDOWS_DESCRIPTION "Just the tone shaping from ConsoleH, and also dual mono."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','4' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

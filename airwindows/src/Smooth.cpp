@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Smooth"
 #define AIRWINDOWS_DESCRIPTION "Can tame pointy sounds or make drums explode."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','h' )
 #define AIRWINDOWS_KERNELS
 enum {
 

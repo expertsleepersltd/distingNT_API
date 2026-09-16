@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Thunder"
 #define AIRWINDOWS_DESCRIPTION "A compressor that retains or exaggerates subsonic bass when you push it."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','h','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','h','r' )
 enum {
 
 	kParam_One =0,

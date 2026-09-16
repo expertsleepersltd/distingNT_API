@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "XHighpass"
 #define AIRWINDOWS_DESCRIPTION "A distorted digital EQ, inspired by retro sampler DSP."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','H','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','H','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

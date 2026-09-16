@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HardVacuum"
 #define AIRWINDOWS_DESCRIPTION "Tube style saturation effects."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','a','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','a','m' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PyewacketMono"
 #define AIRWINDOWS_DESCRIPTION "PyewacketMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','y','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','y','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

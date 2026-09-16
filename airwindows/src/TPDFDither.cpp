@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TPDFDither"
 #define AIRWINDOWS_DESCRIPTION "TPDF dither. With 16/24 bit output and a DeRez control."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','P','D' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','P','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

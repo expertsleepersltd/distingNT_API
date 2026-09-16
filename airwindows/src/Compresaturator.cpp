@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Compresaturator"
 #define AIRWINDOWS_DESCRIPTION "Fades between compressing and soft clipping."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

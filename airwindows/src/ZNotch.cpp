@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZNotch"
 #define AIRWINDOWS_DESCRIPTION "A notch filter made to sound and act like the Emu e6400 Phaser."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','N','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','N','h' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadStack"
 #define AIRWINDOWS_DESCRIPTION "A way of making a parametric EQ out of stacked biquad filters."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

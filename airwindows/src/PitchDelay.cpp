@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PitchDelay"
 #define AIRWINDOWS_DESCRIPTION "TapeDelay2 but with pitch shift instead of flutter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','i','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','i','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Doublelay"
 #define AIRWINDOWS_DESCRIPTION "StereoDoubler with independent delays and feedback."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','o','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','o','y' )
 enum {
 
 	kParam_One =0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PowerSag"
 #define AIRWINDOWS_DESCRIPTION "For emulating power supply limitations in analog modeling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','w' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','g' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

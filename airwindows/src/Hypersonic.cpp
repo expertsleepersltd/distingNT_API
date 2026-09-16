@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Hypersonic"
 #define AIRWINDOWS_DESCRIPTION "Ultrasonic, but steeper and higher cutoff."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','c' )
 #define AIRWINDOWS_KERNELS
 enum {
 

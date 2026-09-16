@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kPlate140"
 #define AIRWINDOWS_DESCRIPTION "A next-generation Airwindows plate reverb."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','P','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','P','0' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

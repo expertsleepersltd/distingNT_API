@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ResEQ"
 #define AIRWINDOWS_DESCRIPTION "A bank of mostly midrange resonances."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','Q' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

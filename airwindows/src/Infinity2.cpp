@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Infinity2"
 #define AIRWINDOWS_DESCRIPTION "Expands Infinity with more tone shaping and a much-requested kill-switch!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','2' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Point"
 #define AIRWINDOWS_DESCRIPTION "An explosive transient designer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','u' )
 #define AIRWINDOWS_KERNELS
 enum {
 

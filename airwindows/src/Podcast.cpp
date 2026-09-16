@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Podcast"
 #define AIRWINDOWS_DESCRIPTION "A simpler pile of curve-style compressors with hard clipping."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

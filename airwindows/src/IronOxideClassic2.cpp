@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "IronOxideClassic2"
 #define AIRWINDOWS_DESCRIPTION "My bandpassy tape sim, updated for high sample rate and aliasing control."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','q' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

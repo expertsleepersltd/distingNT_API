@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Tube"
 #define AIRWINDOWS_DESCRIPTION "A tube style SoundBetterIzer using a new algorithm for analog modeling!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

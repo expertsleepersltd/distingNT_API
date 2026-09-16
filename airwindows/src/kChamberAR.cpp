@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kChamberAR"
 #define AIRWINDOWS_DESCRIPTION "A take on tape echo into chamber echo."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','R' )
 enum {
 
 	kParam_One =0,

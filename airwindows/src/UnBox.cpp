@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "UnBox"
 #define AIRWINDOWS_DESCRIPTION "A distortion where only the harmonics that don't alias are allowed to distort."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','U','n','B' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','U','n','x' )
 #define AIRWINDOWS_KERNELS
 enum {
 

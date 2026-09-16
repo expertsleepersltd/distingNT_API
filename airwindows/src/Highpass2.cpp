@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Highpass2"
 #define AIRWINDOWS_DESCRIPTION "An unusual-sounding variable-slope highpass filter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

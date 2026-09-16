@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SmoothEQ3"
 #define AIRWINDOWS_DESCRIPTION "The most approachable EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','m','3' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pockey"
 #define AIRWINDOWS_DESCRIPTION "12 bit (and under) lo-fi hiphop in a plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Overheads"
 #define AIRWINDOWS_DESCRIPTION "For compressing only part of the sound, strangely!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','v','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','v','s' )
 enum {
 
 	kParam_One =0,

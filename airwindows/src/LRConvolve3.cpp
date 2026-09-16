@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "LRConvolve3"
-#define AIRWINDOWS_DESCRIPTION "LRConvolve3"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','E' )
+#define AIRWINDOWS_DESCRIPTION "Gates one channel by the other, roughly or cleanly."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','R','3' )
 enum {
 
 	kParam_A =0,

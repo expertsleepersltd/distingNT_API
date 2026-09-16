@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "IronOxide5"
 #define AIRWINDOWS_DESCRIPTION "The old school, heavily colored Airwindows tape emulation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','5' )
 #define AIRWINDOWS_KERNELS
 enum {
 

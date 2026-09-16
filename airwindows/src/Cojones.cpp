@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Cojones"
 #define AIRWINDOWS_DESCRIPTION "A new kind of distorty."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','k' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

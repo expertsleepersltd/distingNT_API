@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PhaseNudge"
 #define AIRWINDOWS_DESCRIPTION "A phase rotator/allpass filter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','h','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','h','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

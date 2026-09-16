@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kCosmos"
 #define AIRWINDOWS_DESCRIPTION "Infinite space ambient, or titanic hall."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','C','s' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

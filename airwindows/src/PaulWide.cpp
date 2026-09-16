@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PaulWide"
 #define AIRWINDOWS_DESCRIPTION "A highpassed TPDF wide dither. (quieter, airier AND wider)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','a','e' )
 enum {
 
 	kParam_One = 0,

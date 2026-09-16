@@ -2,8 +2,9 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Baxandall3"
-#define AIRWINDOWS_DESCRIPTION "Baxandall3"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a',' ' )
+#define AIRWINDOWS_DESCRIPTION "For new tone colors."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','3' )
+#define AIRWINDOWS_TAGS kNT_tagFilterEQ
 enum {
 
 	kParam_A =0,

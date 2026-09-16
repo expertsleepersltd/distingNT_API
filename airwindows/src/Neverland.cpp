@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Neverland"
 #define AIRWINDOWS_DESCRIPTION "A re-release of my old Neve-style color adder, exacly as it was."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','e','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','e','d' )
 #define AIRWINDOWS_KERNELS
 enum {
 

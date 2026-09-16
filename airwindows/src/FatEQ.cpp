@@ -2,8 +2,9 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "FatEQ"
-#define AIRWINDOWS_DESCRIPTION "FatEQ"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','a','t' )
+#define AIRWINDOWS_DESCRIPTION "Balances bands only with density."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','a','Q' )
+#define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {
 

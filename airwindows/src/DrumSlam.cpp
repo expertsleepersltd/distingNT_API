@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DrumSlam"
 #define AIRWINDOWS_DESCRIPTION "A heavy-processing tape modeler. This entry contains personal details about what was happening in 2018 for me, and is included in full because there are things that have a place in AirwindowsPedia, as a sort of 'historical section'."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','r','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','r','m' )
 #define AIRWINDOWS_KERNELS
 enum {
 

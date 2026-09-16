@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Coils2"
 #define AIRWINDOWS_DESCRIPTION "A transformer overdrive emulator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

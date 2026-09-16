@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Channel9"
 #define AIRWINDOWS_DESCRIPTION "Channel8 with ultrasonic filtering, and new Teac and Mackie 'low end' settings."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','9' )
 #define AIRWINDOWS_KERNELS
 enum {
 

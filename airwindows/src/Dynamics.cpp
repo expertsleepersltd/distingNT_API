@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dynamics"
 #define AIRWINDOWS_DESCRIPTION "A combination compressor gate."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','s' )
 enum {
 
 	kParam_One =0,

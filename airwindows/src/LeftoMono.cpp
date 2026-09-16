@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "LeftoMono"
 #define AIRWINDOWS_DESCRIPTION "Copies one channel to both, losslessly."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','e','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','e','o' )
 enum {
 
 	kNumberOfParameters=0

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Silken"
 #define AIRWINDOWS_DESCRIPTION "A high frequency boost that gives ambience and texture."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','n' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

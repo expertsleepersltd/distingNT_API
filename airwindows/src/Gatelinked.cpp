@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Gatelinked"
 #define AIRWINDOWS_DESCRIPTION "Gatelinked"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','d' )
 enum {
 
 	kParam_One =0,

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SpatializeDither"
 #define AIRWINDOWS_DESCRIPTION "A high-performance clarity and accuracy dither."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

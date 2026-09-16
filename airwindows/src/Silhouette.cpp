@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Silhouette"
 #define AIRWINDOWS_DESCRIPTION "Replaces the sound with raw noise sculpted to match its dynamics."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

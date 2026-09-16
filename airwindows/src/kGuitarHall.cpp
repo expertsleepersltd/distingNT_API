@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kGuitarHall"
 #define AIRWINDOWS_DESCRIPTION "Accentuates loud midrange skronk!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','G','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','G','l' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

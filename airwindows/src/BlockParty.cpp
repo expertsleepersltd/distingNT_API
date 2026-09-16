@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BlockParty"
 #define AIRWINDOWS_DESCRIPTION "Like a moderately saturated analog limiter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','l','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','l','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

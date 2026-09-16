@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Lowpass"
 #define AIRWINDOWS_DESCRIPTION "Deepens the tone, leaves a gloss and textural modifications."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','w' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','s' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

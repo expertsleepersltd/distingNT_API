@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZRegion"
 #define AIRWINDOWS_DESCRIPTION "An Emu e6400 style Airwindows Region filter."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','R','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','R','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

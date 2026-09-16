@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HermeTrim"
 #define AIRWINDOWS_DESCRIPTION "Very Fine Adjustments, otherwise just like EveryTrim."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','e','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','e','m' )
 enum {
 
 	kParam_One =0,

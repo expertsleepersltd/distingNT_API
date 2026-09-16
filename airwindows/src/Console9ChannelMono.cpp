@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console9ChannelMono"
 #define AIRWINDOWS_DESCRIPTION "Console9ChannelMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','1' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',',' )
 #define AIRWINDOWS_KERNELS
 enum {
 

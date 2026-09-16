@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestDualPan"
 #define AIRWINDOWS_DESCRIPTION "An updated PurestGain but as a dual pan."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u',' ' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','p' )
 enum {
 
 	kParam_A =0,

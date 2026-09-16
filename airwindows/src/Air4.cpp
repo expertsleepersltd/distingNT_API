@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Air4"
 #define AIRWINDOWS_DESCRIPTION "Extends Air3 with controllable high frequency limiting."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','i','4' )
 #define AIRWINDOWS_KERNELS
 enum {
 

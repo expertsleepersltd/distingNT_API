@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Apicolypse"
 #define AIRWINDOWS_DESCRIPTION "A re-release of my old API-style color adder, exacly as it was."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','p','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','p','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

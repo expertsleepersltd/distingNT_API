@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Monitoring3"
 #define AIRWINDOWS_DESCRIPTION "Monitoring, but with Ten Nines into Dark as the wordlength reducer."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','o','3' )
 enum {
 
 	kParam_One =0,

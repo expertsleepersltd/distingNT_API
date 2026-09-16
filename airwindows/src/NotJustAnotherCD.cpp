@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "NotJustAnotherCD"
 #define AIRWINDOWS_DESCRIPTION "A next-gen wordlength reducer at 16 bit, with DeRez."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','D' )
 #define AIRWINDOWS_KERNELS
 enum {
 

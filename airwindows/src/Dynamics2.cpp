@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dynamics2"
 #define AIRWINDOWS_DESCRIPTION "The compressor gate for new Console plugins!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','y','2' )
 enum {
 
 	kParam_A =0,

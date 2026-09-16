@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "C5RawChannel"
 #define AIRWINDOWS_DESCRIPTION "C5RawChannel"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','5','S' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','5','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

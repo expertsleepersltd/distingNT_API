@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Trianglizer"
 #define AIRWINDOWS_DESCRIPTION "A special waveshaper that can transform sines into triangles."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','r' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

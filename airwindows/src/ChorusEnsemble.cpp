@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChorusEnsemble"
 #define AIRWINDOWS_DESCRIPTION "A more complex, multi-tap mono chorus."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','f' )
 #define AIRWINDOWS_KERNELS
 enum {
 

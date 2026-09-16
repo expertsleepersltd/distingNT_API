@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Wolfbot"
 #define AIRWINDOWS_DESCRIPTION "An aggressive Kalman bandpass with evil in its heart."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','W','o','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','W','o','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

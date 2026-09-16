@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VinylDither"
 #define AIRWINDOWS_DESCRIPTION "A high-performance dither that converts digital noise to ‘groove noise’."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','i','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','i','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

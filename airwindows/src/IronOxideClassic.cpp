@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "IronOxideClassic"
 #define AIRWINDOWS_DESCRIPTION "The purer, simpler, early form of Iron Oxide before all the features."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','r','c' )
 #define AIRWINDOWS_KERNELS
 enum {
 

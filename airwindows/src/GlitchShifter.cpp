@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "GlitchShifter"
 #define AIRWINDOWS_DESCRIPTION "A really gnarly, raw-sounding pitch shifter with a dose of insanity!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','l','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','l','r' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

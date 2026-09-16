@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "X2Buss"
-#define AIRWINDOWS_DESCRIPTION "X2Buss"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','2','B' )
+#define AIRWINDOWS_DESCRIPTION "An updated version of the buss processing from ConsoleX2."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','2','s' )
 enum {
 
 	kParam_A =0,
@@ -90,18 +90,12 @@ enum { kNumTemplateParameters = 7 };
 	float bezMaxF;
 	//Dynamics2
 	
-	float avg8L[9];
-	float avg8R[9];
-	float avg4L[5];
-	float avg4R[5];
-	float avg2L[3];
-	float avg2R[3];
-	int avgPos;
-	float lastSlewL;
-	float lastSlewR;
-	float lastSlewpleL;
-	float lastSlewpleR;
-	//preTapeHack
+	float lastSampleL;
+	bool wasPosClipL;
+	bool wasNegClipL;
+	float lastSampleR;
+	bool wasPosClipR;
+	bool wasNegClipR; //Stereo ClipOnly3	
 	
 	float inTrimA;
 	float inTrimB;
@@ -120,10 +114,10 @@ enum { kNumTemplateParameters = 7 };
 	float lowC[biq_total];
 	float bezCompF[bez_total];
 	float bezCompS[bez_total];
-	float avg32L[33];
-	float avg32R[33];
-	float avg16L[17];
-	float avg16R[17];
+	float intermediateL[18];
+	float slewL[34];
+	float intermediateR[18];
+	float slewR[34];
 	};
 	_dram* dram;
 #include "../include/template2.h"
@@ -134,8 +128,8 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 	float overallscale = 1.0f;
 	overallscale /= 44100.0f;
 	overallscale *= GetSampleRate();
-	int spacing = floor(overallscale*2.0f);
-	if (spacing < 2) spacing = 2; if (spacing > 32) spacing = 32;
+	int spacing = floor(overallscale); //should give us working basic scaling, usually 2 or 4
+	if (spacing < 1) spacing = 1; if (spacing > 16) spacing = 16;
 	
 	float trebleGain = (GetParameter( kParam_A )-0.5f)*2.0f;
 	trebleGain = 1.0f+(trebleGain*fabs(trebleGain)*fabs(trebleGain));
@@ -257,9 +251,15 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 	
 	float bezCThresh = powf(1.0f-GetParameter( kParam_I ), 6.0f) * 8.0f;
 	float bezRez = powf(1.0f-GetParameter( kParam_I ), 12.360679774997898f) / overallscale;
+	bezRez = fmin(fmax(bezRez,0.00001f),1.0f);
+	int stepped = 999999; if (bezRez > 0.000001f) stepped = (int)(1.0f/bezRez);
+	bezRez = 0.99999999f / stepped;
+	float bezTrim = 1.0f-(bezRez*((float)stepped/(stepped+1.0f)));
 	float sloRez = powf(1.0f-GetParameter( kParam_I ),10.0f) / overallscale;
 	sloRez = fmin(fmax(sloRez,0.00001f),1.0f);
-	bezRez = fmin(fmax(bezRez,0.00001f),1.0f);
+	stepped = 999999; if (sloRez > 0.000001f) stepped = (int)(1.0f/sloRez);
+	sloRez = 0.99999999f / stepped;
+	float sloTrim = 1.0f-(sloRez*((float)stepped/(stepped+1.0f)));
 	//Dynamics2
 	
 	inTrimA = inTrimB; inTrimB = GetParameter( kParam_J )*2.0f;
@@ -270,16 +270,6 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		float inputSampleR = *inputR;
 		if (fabs(inputSampleL)<1.18e-23f) inputSampleL = fpdL * 1.18e-17f;
 		if (fabs(inputSampleR)<1.18e-23f) inputSampleR = fpdR * 1.18e-17f;
-		
-		if (inputSampleL > 1.0f) inputSampleL = 1.0f;
-		else if (inputSampleL > 0.0f) inputSampleL = -expm1((log1p(-inputSampleL) * 0.6180339887498949f));
-		if (inputSampleL < -1.0f) inputSampleL = -1.0f;
-		else if (inputSampleL < 0.0f) inputSampleL = expm1((log1p(inputSampleL) * 0.6180339887498949f));
-		
-		if (inputSampleR > 1.0f) inputSampleR = 1.0f;
-		else if (inputSampleR > 0.0f) inputSampleR = -expm1((log1p(-inputSampleR) * 0.6180339887498949f));
-		if (inputSampleR < -1.0f) inputSampleR = -1.0f;
-		else if (inputSampleR < 0.0f) inputSampleR = expm1((log1p(inputSampleR) * 0.6180339887498949f));
 		
 		float trebleL = inputSampleL;		
 		float outSample = (trebleL * dram->highA[biq_a0]) + dram->highA[biq_sL1];
@@ -415,20 +405,18 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		
 		inputSampleR = (bassR*bassGain) + (lowmidR*lowmidGain) + (highmidR*highmidGain) + (trebleR*trebleGain);		
 		//fourth stage of three crossovers is the exponential filters
-		//SmoothEQ2
 		
+		//SmoothEQ2
 		if (bezCThresh > 0.0f) {
 			inputSampleL *= ((bezCThresh*0.5f)+1.0f);
 			inputSampleR *= ((bezCThresh*0.5f)+1.0f);
 		}
-		
 		dram->bezCompF[bez_cycle] += bezRez;
 		dram->bezCompF[bez_SampL] += (fabs(inputSampleL) * bezRez);
 		dram->bezCompF[bez_SampR] += (fabs(inputSampleR) * bezRez);
 		bezMaxF = fmax(bezMaxF,fmax(fabs(inputSampleL),fabs(inputSampleR)));
-		
-		if (dram->bezCompF[bez_cycle] > 1.0f) {
-			dram->bezCompF[bez_cycle] -= 1.0f;
+		if (dram->bezCompF[bez_cycle] > bezTrim) {
+			dram->bezCompF[bez_cycle] = 0.0f;
 			dram->bezCompF[bez_CL] = dram->bezCompF[bez_BL];
 			dram->bezCompF[bez_BL] = dram->bezCompF[bez_AL];
 			dram->bezCompF[bez_AL] = dram->bezCompF[bez_SampL];
@@ -442,8 +430,8 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		dram->bezCompS[bez_cycle] += sloRez;
 		dram->bezCompS[bez_SampL] += (fabs(inputSampleL) * sloRez); //note: SampL is a control voltage
 		dram->bezCompS[bez_SampR] += (fabs(inputSampleR) * sloRez); //note: SampR is a control voltage
-		if (dram->bezCompS[bez_cycle] > 1.0f) {
-			dram->bezCompS[bez_cycle] -= 1.0f;
+		if (dram->bezCompS[bez_cycle] > sloTrim) {
+			dram->bezCompS[bez_cycle] = 0.0f;
 			dram->bezCompS[bez_CL] = dram->bezCompS[bez_BL];
 			dram->bezCompS[bez_BL] = dram->bezCompS[bez_AL];
 			dram->bezCompS[bez_AL] = dram->bezCompS[bez_SampL];
@@ -453,22 +441,15 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 			dram->bezCompS[bez_AR] = dram->bezCompS[bez_SampR];
 			dram->bezCompS[bez_SampR] = 0.0f;
 		}
-		float CBFL = (dram->bezCompF[bez_CL]*(1.0f-dram->bezCompF[bez_cycle]))+(dram->bezCompF[bez_BL]*dram->bezCompF[bez_cycle]);
-		float BAFL = (dram->bezCompF[bez_BL]*(1.0f-dram->bezCompF[bez_cycle]))+(dram->bezCompF[bez_AL]*dram->bezCompF[bez_cycle]);
-		float CBAFL = (dram->bezCompF[bez_BL]+(CBFL*(1.0f-dram->bezCompF[bez_cycle]))+(BAFL*dram->bezCompF[bez_cycle]))*0.5f;
-		float CBSL = (dram->bezCompS[bez_CL]*(1.0f-dram->bezCompS[bez_cycle]))+(dram->bezCompS[bez_BL]*dram->bezCompS[bez_cycle]);
-		float BASL = (dram->bezCompS[bez_BL]*(1.0f-dram->bezCompS[bez_cycle]))+(dram->bezCompS[bez_AL]*dram->bezCompS[bez_cycle]);
-		float CBASL = (dram->bezCompS[bez_BL]+(CBSL*(1.0f-dram->bezCompS[bez_cycle]))+(BASL*dram->bezCompS[bez_cycle]))*0.5f;
+		float X = dram->bezCompF[bez_cycle];
+		float CBAFL = (dram->bezCompF[bez_BL]+(dram->bezCompF[bez_CL]*(1.0f-X)*(1.0f-X))+(dram->bezCompF[bez_BL]*2.0f*(1.0f-X)*X)+(dram->bezCompF[bez_AL]*X*X))*0.5f;
+		float CBAFR = (dram->bezCompF[bez_BR]+(dram->bezCompF[bez_CR]*(1.0f-X)*(1.0f-X))+(dram->bezCompF[bez_BR]*2.0f*(1.0f-X)*X)+(dram->bezCompF[bez_AR]*X*X))*0.5f;
+		X = dram->bezCompS[bez_cycle];
+		float CBASL = (dram->bezCompS[bez_BL]+(dram->bezCompS[bez_CL]*(1.0f-X)*(1.0f-X))+(dram->bezCompS[bez_BL]*2.0f*(1.0f-X)*X)+(dram->bezCompS[bez_AL]*X*X))*0.5f;
+		float CBASR = (dram->bezCompS[bez_BR]+(dram->bezCompS[bez_CR]*(1.0f-X)*(1.0f-X))+(dram->bezCompS[bez_BR]*2.0f*(1.0f-X)*X)+(dram->bezCompS[bez_AR]*X*X))*0.5f;
 		float CBAMax = fmax(CBASL,CBAFL); if (CBAMax > 0.0f) CBAMax = 1.0f/CBAMax;
 		float CBAFade = ((CBASL*-CBAMax)+(CBAFL*CBAMax)+1.0f)*0.5f;
 		if (bezCThresh > 0.0f) inputSampleL *= 1.0f-(fmin(((CBASL*(1.0f-CBAFade))+(CBAFL*CBAFade))*bezCThresh,1.0f));
-		
-		float CBFR = (dram->bezCompF[bez_CR]*(1.0f-dram->bezCompF[bez_cycle]))+(dram->bezCompF[bez_BR]*dram->bezCompF[bez_cycle]);
-		float BAFR = (dram->bezCompF[bez_BR]*(1.0f-dram->bezCompF[bez_cycle]))+(dram->bezCompF[bez_AR]*dram->bezCompF[bez_cycle]);
-		float CBAFR = (dram->bezCompF[bez_BR]+(CBFR*(1.0f-dram->bezCompF[bez_cycle]))+(BAFR*dram->bezCompF[bez_cycle]))*0.5f;
-		float CBSR = (dram->bezCompS[bez_CR]*(1.0f-dram->bezCompS[bez_cycle]))+(dram->bezCompS[bez_BR]*dram->bezCompS[bez_cycle]);
-		float BASR = (dram->bezCompS[bez_BR]*(1.0f-dram->bezCompS[bez_cycle]))+(dram->bezCompS[bez_AR]*dram->bezCompS[bez_cycle]);
-		float CBASR = (dram->bezCompS[bez_BR]+(CBSR*(1.0f-dram->bezCompS[bez_cycle]))+(BASR*dram->bezCompS[bez_cycle]))*0.5f;
 		CBAMax = fmax(CBASR,CBAFR); if (CBAMax > 0.0f) CBAMax = 1.0f/CBAMax;
 		CBAFade = ((CBASR*-CBAMax)+(CBAFR*CBAMax)+1.0f)*0.5f;
 		if (bezCThresh > 0.0f) inputSampleR *= 1.0f-(fmin(((CBASR*(1.0f-CBAFade))+(CBAFR*CBAFade))*bezCThresh,1.0f));
@@ -476,86 +457,59 @@ void _airwindowsAlgorithm::render( const Float32* inputL, const Float32* inputR,
 		
 		const float temp = (float)nSampleFrames/inFramesToProcess;
 		float gain = (inTrimA*temp)+(inTrimB*(1.0f-temp));
-		if (gain > 1.0f) gain *= gain;
-		if (gain < 1.0f) gain = 1.0f-powf(1.0f-gain,2);
-		gain *= 2.0f;
-		
 		inputSampleL = inputSampleL * gain;
 		inputSampleR = inputSampleR * gain;
 		//applies pan section, and smoothed fader gain
 		
-		float darkSampleL = inputSampleL;
-		float darkSampleR = inputSampleR;
-		if (avgPos > 31) avgPos = 0;
-		if (spacing > 31) {
-			dram->avg32L[avgPos] = darkSampleL; dram->avg32R[avgPos] = darkSampleR;
-			darkSampleL = 0.0f; darkSampleR = 0.0f;
-			for (int x = 0; x < 32; x++) {darkSampleL += dram->avg32L[x]; darkSampleR += dram->avg32R[x];}
-			darkSampleL /= 32.0f; darkSampleR /= 32.0f;
-		} if (spacing > 15) {
-			dram->avg16L[avgPos%16] = darkSampleL; dram->avg16R[avgPos%16] = darkSampleR;
-			darkSampleL = 0.0f; darkSampleR = 0.0f;
-			for (int x = 0; x < 16; x++) {darkSampleL += dram->avg16L[x]; darkSampleR += dram->avg16R[x];}
-			darkSampleL /= 16.0f; darkSampleR /= 16.0f;
-		} if (spacing > 7) {
-			avg8L[avgPos%8] = darkSampleL; avg8R[avgPos%8] = darkSampleR;
-			darkSampleL = 0.0f; darkSampleR = 0.0f;
-			for (int x = 0; x < 8; x++) {darkSampleL += avg8L[x]; darkSampleR += avg8R[x];}
-			darkSampleL /= 8.0f; darkSampleR /= 8.0f;
-		} if (spacing > 3) {
-			avg4L[avgPos%4] = darkSampleL; avg4R[avgPos%4] = darkSampleR;
-			darkSampleL = 0.0f; darkSampleR = 0.0f;
-			for (int x = 0; x < 4; x++) {darkSampleL += avg4L[x]; darkSampleR += avg4R[x];}
-			darkSampleL /= 4.0f; darkSampleR /= 4.0f;
-		} if (spacing > 1) {
-			avg2L[avgPos%2] = darkSampleL; avg2R[avgPos%2] = darkSampleR;
-			darkSampleL = 0.0f; darkSampleR = 0.0f;
-			for (int x = 0; x < 2; x++) {darkSampleL += avg2L[x]; darkSampleR += avg2R[x];}
-			darkSampleL /= 2.0f; darkSampleR /= 2.0f; 
-		} avgPos++;
-		lastSlewL += fabs(lastSlewpleL-inputSampleL); lastSlewpleL = inputSampleL;
-		float avgSlewL = fmin(lastSlewL,1.0f);
-		lastSlewL = fmax(lastSlewL*0.78f,2.39996322972865332223f);
-		lastSlewR += fabs(lastSlewpleR-inputSampleR); lastSlewpleR = inputSampleR;
-		float avgSlewR = fmin(lastSlewR,1.0f);
-		lastSlewR = fmax(lastSlewR*0.78f,2.39996322972865332223f); //look up Golden Angle, it's cool
-		inputSampleL = (inputSampleL*(1.0f-avgSlewL)) + (darkSampleL*avgSlewL);
-		inputSampleR = (inputSampleR*(1.0f-avgSlewR)) + (darkSampleR*avgSlewR);
+		//begin ClipOnly3 as a little, compressed chunk that can be dropped into code
+		float noise = 1.0f-((float(fpdL)/UINT32_MAX)*0.076f);
+		if (wasPosClipL == true) { //current will be over
+			if (inputSampleL<lastSampleL) lastSampleL=(0.9085097f*noise)+(inputSampleL*(1.0f-noise));
+			else lastSampleL = 0.94f; //~-0.2dB to nearly match ClipOnly and ClipOnly2
+		} wasPosClipL = false;
+		if (inputSampleL>0.9085097f) {wasPosClipL=true;inputSampleL=(0.9085097f*noise)+(lastSampleL*(1.0f-noise));}
+		if (wasNegClipL == true) { //current will be -over
+			if (inputSampleL > lastSampleL) lastSampleL=(-0.9085097f*noise)+(inputSampleL*(1.0f-noise));
+			else lastSampleL = -0.94f;
+		} wasNegClipL = false;
+		if (inputSampleL<-0.9085097f) {wasNegClipL=true;inputSampleL=(-0.9085097f*noise)+(lastSampleL*(1.0f-noise));}
+		dram->slewL[spacing*2] = fabs(lastSampleL-inputSampleL);
+		for (int x = spacing*2; x > 0; x--) dram->slewL[x-1] = dram->slewL[x];
+		dram->intermediateL[spacing] = inputSampleL; inputSampleL = lastSampleL;
+		//latency is however many samples equals one 44.1k sample
+		for (int x = spacing; x > 0; x--) {dram->intermediateL[x-1] = dram->intermediateL[x];} lastSampleL = dram->intermediateL[0];
+		if (wasPosClipL || wasNegClipL) {
+			for (int x = spacing; x > 0; x--) lastSampleL += dram->intermediateL[x];
+			lastSampleL /= spacing;
+		} float finalSlew = 0.0f;
+		for (int x = spacing*2; x >= 0; x--) if (finalSlew < dram->slewL[x]) finalSlew = dram->slewL[x];
+		float postclip = 0.94f / (1.0f+(finalSlew*1.3986013f));
+		if (inputSampleL > postclip) inputSampleL = postclip; if (inputSampleL < -postclip) inputSampleL = -postclip;
 		
-		//begin TapeHack section
-		inputSampleL = fmax(fmin(inputSampleL,2.305929007734908f),-2.305929007734908f);
-		float addtwo = inputSampleL * inputSampleL;
-		float empower = inputSampleL * addtwo; // inputSampleL to the third power
-		inputSampleL -= (empower / 6.0f);
-		empower *= addtwo; // to the fifth power
-		inputSampleL += (empower / 69.0f);
-		empower *= addtwo; //seventh
-		inputSampleL -= (empower / 2530.08f);
-		empower *= addtwo; //ninth
-		inputSampleL += (empower / 224985.6f);
-		empower *= addtwo; //eleventh
-		inputSampleL -= (empower / 9979200.0f);
-		//this is a degenerate form of a Taylor Series to approximate sin()
-		inputSampleL *= 0.92f;
-		//end TapeHack section
-		
-		//begin TapeHack section
-		inputSampleR = fmax(fmin(inputSampleR,2.305929007734908f),-2.305929007734908f);
-		addtwo = inputSampleR * inputSampleR;
-		empower = inputSampleR * addtwo; // inputSampleR to the third power
-		inputSampleR -= (empower / 6.0f);
-		empower *= addtwo; // to the fifth power
-		inputSampleR += (empower / 69.0f);
-		empower *= addtwo; //seventh
-		inputSampleR -= (empower / 2530.08f);
-		empower *= addtwo; //ninth
-		inputSampleR += (empower / 224985.6f);
-		empower *= addtwo; //eleventh
-		inputSampleR -= (empower / 9979200.0f);
-		//this is a degenerate form of a Taylor Series to approximate sin()
-		inputSampleR *= 0.92f;
-		//end TapeHack section
-		//Discontapeity
+		noise = 1.0f-((float(fpdR)/UINT32_MAX)*0.076f);
+		if (wasPosClipR == true) { //current will be over
+			if (inputSampleR<lastSampleR) lastSampleR=(0.9085097f*noise)+(inputSampleR*(1.0f-noise));
+			else lastSampleR = 0.94f; //~-0.2dB to nearly match ClipOnly and ClipOnly2
+		} wasPosClipR = false;
+		if (inputSampleR>0.9085097f) {wasPosClipR=true;inputSampleR=(0.9085097f*noise)+(lastSampleR*(1.0f-noise));}
+		if (wasNegClipR == true) { //current will be -over
+			if (inputSampleR > lastSampleR) lastSampleR=(-0.9085097f*noise)+(inputSampleR*(1.0f-noise));
+			else lastSampleR = -0.94f;
+		} wasNegClipR = false;
+		if (inputSampleR<-0.9085097f) {wasNegClipR=true;inputSampleR=(-0.9085097f*noise)+(lastSampleR*(1.0f-noise));}
+		dram->slewR[spacing*2] = fabs(lastSampleR-inputSampleR);
+		for (int x = spacing*2; x > 0; x--) dram->slewR[x-1] = dram->slewR[x];
+		dram->intermediateR[spacing] = inputSampleR; inputSampleR = lastSampleR;
+		//latency is however many samples equals one 44.1k sample
+		for (int x = spacing; x > 0; x--) {dram->intermediateR[x-1] = dram->intermediateR[x];} lastSampleR = dram->intermediateR[0];
+		if (wasPosClipR || wasNegClipR) {
+			for (int x = spacing; x > 0; x--) lastSampleR += dram->intermediateR[x];
+			lastSampleR /= spacing;
+		} finalSlew = 0.0f;
+		for (int x = spacing*2; x >= 0; x--) if (finalSlew < dram->slewR[x]) finalSlew = dram->slewR[x];
+		postclip = 0.94f / (1.0f+(finalSlew*1.3986013f));
+		if (inputSampleR > postclip) inputSampleR = postclip; if (inputSampleR < -postclip) inputSampleR = -postclip;
+		//end ClipOnly3 as a little, compressed chunk that can be dropped into code
 		
 		
 		
@@ -596,15 +550,14 @@ int _airwindowsAlgorithm::reset(void) {
 	dram->bezCompS[bez_cycle] = 1.0;
 	//Dynamics2
 	
-	for (int x = 0; x < 33; x++) {dram->avg32L[x] = 0.0; dram->avg32R[x] = 0.0;}
-	for (int x = 0; x < 17; x++) {dram->avg16L[x] = 0.0; dram->avg16R[x] = 0.0;}
-	for (int x = 0; x < 9; x++) {avg8L[x] = 0.0; avg8R[x] = 0.0;}
-	for (int x = 0; x < 5; x++) {avg4L[x] = 0.0; avg4R[x] = 0.0;}
-	for (int x = 0; x < 3; x++) {avg2L[x] = 0.0; avg2R[x] = 0.0;}
-	avgPos = 0;
-	lastSlewL = 0.0; lastSlewR = 0.0;
-	lastSlewpleL = 0.0; lastSlewpleR = 0.0;
-	//preTapeHack
+	lastSampleL = 0.0;
+	wasPosClipL = false;
+	wasNegClipL = false;
+	lastSampleR = 0.0;
+	wasPosClipR = false;
+	wasNegClipR = false;
+	for (int x = 0; x < 17; x++) {dram->intermediateL[x] = 0.0; dram->intermediateR[x] = 0.0;}
+	for (int x = 0; x < 33; x++) {dram->slewL[x] = 0.0; dram->slewR[x] = 0.0;}
 	
 	inTrimA = 0.5; inTrimB = 0.5;
 	

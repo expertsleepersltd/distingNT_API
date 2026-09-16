@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeHiss"
 #define AIRWINDOWS_DESCRIPTION "Tries to suppress background hiss, like a hiss gate."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','H' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','u' )
 #define AIRWINDOWS_KERNELS
 enum {
 

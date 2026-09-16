@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console8SubIn"
 #define AIRWINDOWS_DESCRIPTION "Moves to a channel/submix/buss topology and adds analog simulation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o',',' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','&' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Remap"
 #define AIRWINDOWS_DESCRIPTION "Puts the guts back into overloudenated audio!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

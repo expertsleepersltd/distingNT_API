@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Tube2"
 #define AIRWINDOWS_DESCRIPTION "Extends Tube, with more sophisticated processing and input trim."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','u','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

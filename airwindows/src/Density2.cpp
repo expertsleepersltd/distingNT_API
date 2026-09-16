@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Density2"
 #define AIRWINDOWS_DESCRIPTION "A different color for Density, some old code I had that people wanted."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','6' )
 #define AIRWINDOWS_KERNELS
 enum {
 

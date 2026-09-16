@@ -2,8 +2,8 @@
 #include <new>
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ADClip8"
-#define AIRWINDOWS_DESCRIPTION "The ultimate Airwindows loudenator/biggenator."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','D','D' )
+#define AIRWINDOWS_DESCRIPTION "A stacked-up Airwindows loudenator based on ClipOnly2."
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','D','8' )
 #define AIRWINDOWS_KERNELS
 enum {
 

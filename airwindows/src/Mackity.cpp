@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Mackity"
 #define AIRWINDOWS_DESCRIPTION "An emulation of the input stage of a vintage Mackie 1202!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','a','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

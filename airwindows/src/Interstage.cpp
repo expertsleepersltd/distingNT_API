@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Interstage"
 #define AIRWINDOWS_DESCRIPTION "A subtle and sophisticated analogifier."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

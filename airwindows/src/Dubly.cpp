@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dubly"
 #define AIRWINDOWS_DESCRIPTION "A retro vibe and atmosphere maker."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','y' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

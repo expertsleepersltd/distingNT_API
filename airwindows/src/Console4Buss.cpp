@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Console4Buss"
 #define AIRWINDOWS_DESCRIPTION "The original Airwindows ITB mixing system."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','o','v' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pressure6"
 #define AIRWINDOWS_DESCRIPTION "Refines the Pressure compressor and how it moves."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','6' )
 enum {
 
 	kParam_A =0,

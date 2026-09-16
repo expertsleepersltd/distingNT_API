@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Acceleration2"
 #define AIRWINDOWS_DESCRIPTION "Acceleration, better! Updated for high sample rate and more extreme effect."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','c','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','c','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

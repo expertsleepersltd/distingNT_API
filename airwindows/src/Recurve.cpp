@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Recurve"
 #define AIRWINDOWS_DESCRIPTION "A special buss compressor with no threshold point."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','e' )
 enum {
 
 	//Add your parameters here...

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ClearCoat"
 #define AIRWINDOWS_DESCRIPTION "An array of bright ambience reverbs."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','l','t' )
 enum {
 
 	kParam_One =0,

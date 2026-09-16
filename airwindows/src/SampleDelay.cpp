@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SampleDelay"
 #define AIRWINDOWS_DESCRIPTION "Three delays combined: millisecond, sample and subsample."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','a','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','a','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

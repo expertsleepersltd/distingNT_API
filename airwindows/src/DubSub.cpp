@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DubSub"
 #define AIRWINDOWS_DESCRIPTION "A fully featured bass doctor."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','b' )
 #define AIRWINDOWS_KERNELS
 enum {
 

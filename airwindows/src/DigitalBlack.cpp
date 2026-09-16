@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DigitalBlack"
 #define AIRWINDOWS_DESCRIPTION "A quick, staccato gate."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

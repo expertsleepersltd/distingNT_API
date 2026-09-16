@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VoiceOfTheStarship"
 #define AIRWINDOWS_DESCRIPTION "A deep noise tone source."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','o','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','o','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

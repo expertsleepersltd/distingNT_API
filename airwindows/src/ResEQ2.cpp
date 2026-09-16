@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ResEQ2"
 #define AIRWINDOWS_DESCRIPTION "A single, sharp, sonorous mid peak."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','e','2' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

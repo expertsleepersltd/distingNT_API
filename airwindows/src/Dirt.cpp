@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Dirt"
 #define AIRWINDOWS_DESCRIPTION "A soft-clip distortion in the spirit of Edge."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

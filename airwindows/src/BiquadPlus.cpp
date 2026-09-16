@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BiquadPlus"
 #define AIRWINDOWS_DESCRIPTION "Biquad plus zipper noise suppression! For twiddling the controls."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','w' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

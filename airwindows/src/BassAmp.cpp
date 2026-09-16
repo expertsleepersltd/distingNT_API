@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BassAmp"
 #define AIRWINDOWS_DESCRIPTION "An old plugin with new tweaks, that gives some bass guitar tones."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

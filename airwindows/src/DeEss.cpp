@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeEss"
 #define AIRWINDOWS_DESCRIPTION "The best de-essing solution there is. A go-to utility plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','E' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

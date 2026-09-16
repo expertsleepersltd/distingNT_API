@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Desk"
 #define AIRWINDOWS_DESCRIPTION "Classic Airwindows subtle analog modeling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "VoiceTrick"
 #define AIRWINDOWS_DESCRIPTION "Lets you record vocals while monitoring over speakers."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','o','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','V','o','k' )
 enum {
 
 	kParam_One =0,

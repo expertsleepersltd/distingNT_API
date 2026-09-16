@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pop3"
 #define AIRWINDOWS_DESCRIPTION "The dynamics from ConsoleX."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','4' )
 enum {
 
 	kParam_A =0,

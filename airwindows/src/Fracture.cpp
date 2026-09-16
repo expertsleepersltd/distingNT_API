@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Fracture"
 #define AIRWINDOWS_DESCRIPTION "A frequency multiplier/waveshaper with a soft disruption to the sound."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','r','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','r','e' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

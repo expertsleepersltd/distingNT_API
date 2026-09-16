@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "OrbitKickMono"
 #define AIRWINDOWS_DESCRIPTION "OrbitKickMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','r','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','O','r','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

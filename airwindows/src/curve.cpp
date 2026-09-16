@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "curve"
 #define AIRWINDOWS_DESCRIPTION "The simplest, purest form of Recurve with no extra boosts."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','c','u','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','c','u','e' )
 enum {
 
 	kNumberOfParameters=0

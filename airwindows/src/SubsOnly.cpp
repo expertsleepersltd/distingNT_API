@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SubsOnly"
 #define AIRWINDOWS_DESCRIPTION "A mix check plugin that shows you only the extreme lows."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','u','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "GrooveWear"
 #define AIRWINDOWS_DESCRIPTION "For scrubbing highs off mechanically like a stylus would."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','r','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','r','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

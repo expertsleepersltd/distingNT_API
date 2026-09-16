@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Cider"
 #define AIRWINDOWS_DESCRIPTION "A re-release of another old Character plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','i','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','i','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

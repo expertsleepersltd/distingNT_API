@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Cans"
 #define AIRWINDOWS_DESCRIPTION "A room simulator for headphone mixers."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','a','t' )
 enum {
 
 	kParam_A =0,

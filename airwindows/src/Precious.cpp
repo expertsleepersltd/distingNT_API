@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Precious"
 #define AIRWINDOWS_DESCRIPTION "A re-release of another old Character plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','r','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

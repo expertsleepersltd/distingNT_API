@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Channel7"
 #define AIRWINDOWS_DESCRIPTION "Improves slew clipping and lets you blend Channel 6 and 5."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','7' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZLowpass2"
 #define AIRWINDOWS_DESCRIPTION "Acts more like the Emu e6400 Ultra lowpass in motion, with coefficient interpolation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','L','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','L','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

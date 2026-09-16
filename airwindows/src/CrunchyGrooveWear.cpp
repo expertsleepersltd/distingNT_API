@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "CrunchyGrooveWear"
 #define AIRWINDOWS_DESCRIPTION "A version of GrooveWear for more edge and distortion."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','v' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','r','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

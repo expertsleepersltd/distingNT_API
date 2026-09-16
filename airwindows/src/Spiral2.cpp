@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Spiral2"
 #define AIRWINDOWS_DESCRIPTION "Spiral with controls including Presence. Also, a historical post presented in full as it is just after my Dad's death. Post follows:"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','j' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','p','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

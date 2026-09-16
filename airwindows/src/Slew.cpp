@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Slew"
 #define AIRWINDOWS_DESCRIPTION "A slew clipper, which darkens treble in an unusual way."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','l','w' )
 #define AIRWINDOWS_KERNELS
 enum {
 

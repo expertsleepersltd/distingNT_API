@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Luxor"
 #define AIRWINDOWS_DESCRIPTION "A re-release of another old Character plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','u','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','u','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestConsoleChannel"
 #define AIRWINDOWS_DESCRIPTION "The most free from coloration Console system."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Srsly2"
 #define AIRWINDOWS_DESCRIPTION "A revisit of Srsly, to make the stereo widening more extreme."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','r','2' )
 enum {
 
 	kParam_One =0,

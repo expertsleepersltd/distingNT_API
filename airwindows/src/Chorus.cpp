@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Chorus"
 #define AIRWINDOWS_DESCRIPTION "A mono chorus, also works as a vibrato."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

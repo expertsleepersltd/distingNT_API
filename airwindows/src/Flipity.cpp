@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Flipity"
 #define AIRWINDOWS_DESCRIPTION "A channel phase flipper/swapper utility."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','y' )
 enum {
 
 	kParam_One =0,

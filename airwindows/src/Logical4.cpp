@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Logical4"
 #define AIRWINDOWS_DESCRIPTION "A classic 2-buss compressor."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','L','o','4' )
 enum {
 
 	kParam_One =0,

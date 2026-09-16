@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HypersonX"
 #define AIRWINDOWS_DESCRIPTION "Like UltrasonX but with seven stages instead of five."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','y','X' )
 #define AIRWINDOWS_KERNELS
 enum {
 

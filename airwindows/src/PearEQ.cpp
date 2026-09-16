@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PearEQ"
 #define AIRWINDOWS_DESCRIPTION "A six-band Pear-based graphic EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','Q' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DarkNoise"
 #define AIRWINDOWS_DESCRIPTION "An alternative method for producing bassier noise directly. Sound design stuff."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','a','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','a','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ToTape5"
 #define AIRWINDOWS_DESCRIPTION "Airwindows analog tape emulation."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','T' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','o','5' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "XNotch"
 #define AIRWINDOWS_DESCRIPTION "A distorted digital EQ, not as glitchy as the others."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','N','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','X','N','h' )
 #define AIRWINDOWS_KERNELS
 enum {
 

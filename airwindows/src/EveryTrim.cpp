@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "EveryTrim"
 #define AIRWINDOWS_DESCRIPTION "Left/Right, Mid/Side, and Master in one plugin."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','v','g' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','E','v','m' )
 enum {
 
 	kParam_One =0,

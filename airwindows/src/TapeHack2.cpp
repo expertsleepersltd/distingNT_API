@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TapeHack2"
 #define AIRWINDOWS_DESCRIPTION "Brings Airwindows tape to a new level."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','3' )
 #define AIRWINDOWS_KERNELS
 enum {
 

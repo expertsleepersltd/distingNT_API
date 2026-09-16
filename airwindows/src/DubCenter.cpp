@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DubCenter"
 #define AIRWINDOWS_DESCRIPTION "A version of DubSub where the bass reinforcement is purely mono."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','r' )
 enum {
 
 	kParam_One =0,

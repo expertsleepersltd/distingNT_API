@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PunchyGuitar"
 #define AIRWINDOWS_DESCRIPTION "PunchyGuitar"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 
@@ -49,7 +49,12 @@ struct _kernel {
 	void reset(void);
 	float GetParameter( int index ) { return owner->GetParameter( index ); }
 	_airwindowsAlgorithm* owner;
- 
+
+		enum {
+			bip_dvA, bip_dvB, bip_dvC, bip_dvD, bip_pvA, bip_pvB, bip_pvC, bip_pvD,
+			bip_total //each distortion section can have one of these, it stacks well
+		}; //not remotely elliptic BLEP antialiasing, instead it is derivative BIP :D
+		float bip[bip_total][12];		
 		float angS[18][12];
 		float angA[18][12];
 		float angG[12];
@@ -150,16 +155,28 @@ void _airwindowsAlgorithm::_kernel::render( const Float32* inSourceP, Float32* i
 			}
 			inputSample += (band*angG[9]);
 			inputSample *= drive;
-			inputSample = fmin(fmax(inputSample,-2.032610446872596f),2.032610446872596f);
-			float X = inputSample * inputSample;
-			float temp = inputSample * X;
-			inputSample -= (temp*0.125f); temp *= X;
-			inputSample += (temp*0.0078125f); temp *= X;
-			inputSample -= (temp*0.000244140625f); temp *= X;
-			inputSample += (temp*0.000003814697265625f); temp *= X;
-			inputSample -= (temp*0.0000000298023223876953125f); temp *= X;
-			//purestsaturation: sine, except all the corrections
+			float bip_delta = inputSample; //delta can be just local and re-used
+			inputSample = fmin(fmax(inputSample,-M_PI_2),M_PI_2);
+			float X = inputSample; X *= X; //float for even
+			float temp = inputSample * X; //the initial multiplies
+			inputSample -= temp*0.16666666666666666666666666666666666f; temp *= X;
+			inputSample += temp*0.00833333333333333333333333333333333f; temp *= X;
+			inputSample -= temp*0.00019841269841269841269841269841269f; temp *= X;
+			inputSample += temp*0.00000275573192239858906525573192239f; temp *= X;
+			inputSample -= temp*0.00000002505210838544171877521083854f; temp *= X;
+			inputSample += temp*0.00000000016059043836821614599392377f; temp *= X;
+			inputSample -= temp*0.00000000000076471637318198164759011f; temp *= X;
+			inputSample += temp*0.00000000000000281145725434552076319f; temp *= X;
+			inputSample -= temp*0.00000000000000000822063524662432971f; temp *= X;
+			inputSample += temp*0.00000000000000000001957294106339126f;
 			//retain mantissa of a float increasing power function
+			//float probably doesn't handle more than 36 digits or so
+			bip[bip_dvA][x] = bip_delta - inputSample; // these are derivatives: raw clip is position
+			bip[bip_dvB][x] = bip[bip_pvA][x]-bip[bip_dvA][x]; bip[bip_pvA][x] = bip[bip_dvA][x];//velocity
+			bip[bip_dvC][x] = bip[bip_pvB][x]-bip[bip_dvB][x]; bip[bip_pvB][x] = bip[bip_dvB][x];//acceleration
+			bip[bip_dvD][x] = bip[bip_pvC][x]-bip[bip_dvC][x]; bip[bip_pvC][x] = bip[bip_dvC][x];//jerk
+			float bip_dvE = bip[bip_pvD][x]-bip[bip_dvD][x]; bip[bip_pvD][x] = bip[bip_dvD][x];//snap
+			inputSample *= (1.0f+(fabs(bip[bip_dvC][x])*0.0618f)+(fabs(bip[bip_dvD][x])*-0.05982f)+(fabs(bip_dvE)*0.0206f));
 		}
 		
 		if (gateroller < 1.0f)
@@ -202,7 +219,10 @@ void _airwindowsAlgorithm::_kernel::reset(void) {
 			angS[x][y] = 0.0;angA[x][y] = 0.0;
 		}
 	}
-	for(int y=0; y<11; y++) angG[y] = 0.0;
+	for(int y=0; y<11; y++) {
+		angG[y] = 0.0;
+		for (int x = 0; x < bip_total; x++) bip[x][y] = 0.0;
+	}
 	for(int count = 0; count < 36; count++) {
 		dram->iirHPosition[count] = 0.0;
 		dram->iirHAngle[count] = 0.0;

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ChimeyDeluxe"
 #define AIRWINDOWS_DESCRIPTION "A very flexible compressed DI conditioner."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

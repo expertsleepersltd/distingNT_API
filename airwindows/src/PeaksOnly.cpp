@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PeaksOnly"
 #define AIRWINDOWS_DESCRIPTION "A transformative mix check tool."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','e','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

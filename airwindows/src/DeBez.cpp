@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeBez"
 #define AIRWINDOWS_DESCRIPTION "Gives you retro sampley textures!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','C' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','z' )
 #define AIRWINDOWS_KERNELS
 enum {
 

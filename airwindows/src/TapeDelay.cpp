@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TapeDelay"
 #define AIRWINDOWS_DESCRIPTION "An old school tape echo with pitch swerve effects."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','a','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

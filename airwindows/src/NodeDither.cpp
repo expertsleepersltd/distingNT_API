@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "NodeDither"
 #define AIRWINDOWS_DESCRIPTION "Adjusta-TPDF-dither, like a dither flanger. Can do Paul and Tape settings."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','N','o','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

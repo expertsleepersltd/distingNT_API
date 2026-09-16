@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Chamber2"
 #define AIRWINDOWS_DESCRIPTION "A feedforward reverb, a blur delay, and a glitch topping!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','b' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','2' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

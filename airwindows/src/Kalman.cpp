@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Kalman"
 #define AIRWINDOWS_DESCRIPTION "Not a real filter!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','K','a','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','K','a','n' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "AverMatrix"
 #define AIRWINDOWS_DESCRIPTION "Turns averaging into a full-featured EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','v','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','v','x' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

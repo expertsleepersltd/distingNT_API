@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Sinew"
 #define AIRWINDOWS_DESCRIPTION "Combines sines and slew clipping for a tape bias effect!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','i','w' )
 #define AIRWINDOWS_KERNELS
 enum {
 

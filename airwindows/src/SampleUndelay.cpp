@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "SampleUndelay"
 #define AIRWINDOWS_DESCRIPTION "AU-only SampleDelay featuring negative delay."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','a','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','S','a',' ' )
 #define AIRWINDOWS_KERNELS
 enum {
 

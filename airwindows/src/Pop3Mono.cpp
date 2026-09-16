@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Pop3Mono"
 #define AIRWINDOWS_DESCRIPTION "Pop3Mono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','o','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

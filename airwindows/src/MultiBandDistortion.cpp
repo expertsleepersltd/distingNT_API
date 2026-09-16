@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "MultiBandDistortion"
 #define AIRWINDOWS_DESCRIPTION "An old weird gnarly sound wrecker :)"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','u','l' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','M','u','n' )
 #define AIRWINDOWS_KERNELS
 enum {
 

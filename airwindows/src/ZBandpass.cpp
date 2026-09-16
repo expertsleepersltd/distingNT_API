@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "ZBandpass"
 #define AIRWINDOWS_DESCRIPTION "A bandpass made to sound and act like the Emu e6400 Ultra bandpass."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','B','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','Z','B','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

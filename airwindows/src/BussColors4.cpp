@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BussColors4"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows console emulations, now working up to 192K correctly."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','u','4' )
 #define AIRWINDOWS_KERNELS
 enum {
 

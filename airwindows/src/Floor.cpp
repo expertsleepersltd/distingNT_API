@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Floor"
 #define AIRWINDOWS_DESCRIPTION "Fake bottom octave for fun and profit!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','F','l','r' )
 #define AIRWINDOWS_KERNELS
 enum {
 

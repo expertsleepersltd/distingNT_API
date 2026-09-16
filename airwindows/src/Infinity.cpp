@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Infinity"
 #define AIRWINDOWS_DESCRIPTION "A MatrixVerb specifically designed to sustain and layer sounds forever."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','I','n','y' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 #define AIRWINDOWS_KERNELS
 enum {

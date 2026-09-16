@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Tremolo"
 #define AIRWINDOWS_DESCRIPTION "Fluctuating saturation curves for a tubey tremolo."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','f' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','o' )
 #define AIRWINDOWS_TAGS kNT_tagEffect
 #define AIRWINDOWS_KERNELS
 enum {

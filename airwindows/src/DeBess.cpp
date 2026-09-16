@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DeBess"
 #define AIRWINDOWS_DESCRIPTION "An improved DeEss, with perfect rejection of non-ess audio."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','B' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','e','s' )
 #define AIRWINDOWS_KERNELS
 enum {
 

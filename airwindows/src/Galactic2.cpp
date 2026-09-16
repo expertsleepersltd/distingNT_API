@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Galactic2"
 #define AIRWINDOWS_DESCRIPTION "A super-reverb REdesigned specially for pads and space ambient."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','m' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','G','a','2' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

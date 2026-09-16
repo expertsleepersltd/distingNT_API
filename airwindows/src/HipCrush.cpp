@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HipCrush"
 #define AIRWINDOWS_DESCRIPTION "The de-rez section for ConsoleH."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','p' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','h' )
 #define AIRWINDOWS_KERNELS
 enum {
 

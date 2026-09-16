@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "AtmosphereChannel"
 #define AIRWINDOWS_DESCRIPTION "Console5 processing with powerful new acoustic distance effects."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','t','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','t','l' )
 #define AIRWINDOWS_KERNELS
 enum {
 

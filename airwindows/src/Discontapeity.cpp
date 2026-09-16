@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Discontapeity"
 #define AIRWINDOWS_DESCRIPTION "Combines air modeling with tape-style overdrive."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','s' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','i','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

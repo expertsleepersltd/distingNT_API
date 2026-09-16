@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "kStation"
 #define AIRWINDOWS_DESCRIPTION "A realistic small room modeled after David Bowie's vocal reverb."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','S','t' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','k','S','n' )
 #define AIRWINDOWS_TAGS kNT_tagEffect | kNT_tagReverb
 enum {
 

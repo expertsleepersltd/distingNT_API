@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Channel6"
 #define AIRWINDOWS_DESCRIPTION "Uses the Spiral algorithm."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','e' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','C','h','6' )
 #define AIRWINDOWS_KERNELS
 enum {
 

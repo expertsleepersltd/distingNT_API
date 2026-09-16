@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Hombre"
 #define AIRWINDOWS_DESCRIPTION "Atmosphere and texture (through very short delays)."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','o','n' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','o','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

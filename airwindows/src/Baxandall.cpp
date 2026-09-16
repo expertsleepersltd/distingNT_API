@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Baxandall"
 #define AIRWINDOWS_DESCRIPTION "A killer general-purpose EQ."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','x' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','a','l' )
 #define AIRWINDOWS_TAGS kNT_tagFilterEQ
 #define AIRWINDOWS_KERNELS
 enum {

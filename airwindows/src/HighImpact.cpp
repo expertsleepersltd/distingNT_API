@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "HighImpact"
 #define AIRWINDOWS_DESCRIPTION "Distorted grit and punch without fatness. This is also another little window into Airwindows history, as this is the point where I began putting out the for-pay plugins for free through Patreon. The post is presented in its entirety as a picture of where I was at on April 9, 2017. By now I have put out more than 300 plugins and I'm still going, but this was when I'd done 47 and all the most sought-after ones were still being held back as goals… here is the original post."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','h' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','H','i','t' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Biquad2"
 #define AIRWINDOWS_DESCRIPTION "The Airwindows biquad filter that's more sweepable and synthy."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','r' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','i','2' )
 #define AIRWINDOWS_KERNELS
 enum {
 

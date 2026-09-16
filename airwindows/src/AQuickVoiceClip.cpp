@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "AQuickVoiceClip"
 #define AIRWINDOWS_DESCRIPTION "Softens headset mic recordings that have been super hard clipped on capture."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','Q','u' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','A','Q','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "DubPlate"
 #define AIRWINDOWS_DESCRIPTION "Ruthless dubplate mastering for electronic music."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','c' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','u','e' )
 enum {
 
 	kNumberOfParameters=0

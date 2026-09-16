@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "RingModulatorMono"
 #define AIRWINDOWS_DESCRIPTION "RingModulatorMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','i','o' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','R','i','p' )
 #define AIRWINDOWS_KERNELS
 enum {
 

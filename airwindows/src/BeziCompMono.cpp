@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "BeziCompMono"
 #define AIRWINDOWS_DESCRIPTION "BeziCompMono"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','#' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','B','e','o' )
 #define AIRWINDOWS_KERNELS
 enum {
 

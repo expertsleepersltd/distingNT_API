@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Drive"
 #define AIRWINDOWS_DESCRIPTION "The angry distortion!"
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','r','i' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','D','r','e' )
 #define AIRWINDOWS_KERNELS
 enum {
 

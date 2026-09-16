@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "Wider"
 #define AIRWINDOWS_DESCRIPTION "Airwindows stereo space shaping."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','W','i','d' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','W','i','r' )
 enum {
 
 	kParam_One =0,

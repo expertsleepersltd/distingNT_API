@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "PurestSaturation"
 #define AIRWINDOWS_DESCRIPTION "An experiment in softclipping."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','%' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','P','u','y' )
 #define AIRWINDOWS_KERNELS
 enum {
 

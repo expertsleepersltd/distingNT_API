@@ -3,7 +3,7 @@
 #include <distingnt/api.h>
 #define AIRWINDOWS_NAME "TransDesk"
 #define AIRWINDOWS_DESCRIPTION "More of a transistory, rock desk analog modeling."
-#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','a' )
+#define AIRWINDOWS_GUID NT_MULTICHAR( 'A','T','r','k' )
 #define AIRWINDOWS_KERNELS
 enum {
 
