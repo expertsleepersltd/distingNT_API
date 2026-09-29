@@ -162,6 +162,14 @@ struct _NT_wavetableEvaluation
  */
 
 /*
+ * Used to return info from NT_getMidiFileFolderInfo().
+ */
+struct _NT_midiFileFolderInfo
+{
+	const char* 	name;
+};
+
+/*
  * Opaque pointer to a memory block holding a stream structure.
  * Should be allocated using NT_globals.streamSizeBytes
  */
@@ -276,6 +284,16 @@ bool		NT_streamOpen( _NT_stream stream, const _NT_streamOpenData& data );
  * Returns the number of frames rendered.
  */
 uint32_t 	NT_streamRender( _NT_stream stream, _NT_frame* renderBuffer, uint32_t numFrames, float speed );
+
+/*
+ * Get the number of MIDI file folders.
+ */
+uint32_t	NT_getNumMidiFileFolders(void);
+
+/*
+ * Get info about the given folder.
+ */
+void		NT_getMidiFileFolderInfo( uint32_t folder, _NT_midiFileFolderInfo& info );
 
 }
 
