@@ -45,8 +45,9 @@ enum _NT_version
 	kNT_apiVersion11,				// Add WAV streaming. Compatible with v4-10.
 	kNT_apiVersion12,				// Add parameterString(). Compatible with v4-11.
 	kNT_apiVersion13,				// Add bus count constants, and NT_updateParameterPages(). Compatible with v4-12.
+	kNT_apiVersion14,				// Add kNT_unitString and stringParameterBuffer(). Compatible with v4-13.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion13
+	kNT_apiVersionCurrent 		= kNT_apiVersion14
 };
 
 /*
@@ -205,6 +206,7 @@ enum _NT_parameterUnit
 	kNT_unitDegrees,
 	kNT_unitHasStrings,					// parameterString() will be called for the parameter
 	kNT_unitConfirm,					// user needs to confirm changes. Also calls parameterString().
+	kNT_unitString,						// host will call stringParameterBuffer().
 
 	// These values should only be used via the NT_PARAMETER_AUDIO_INPUT() etc. macros.
 	kNT_unitAudioInput = 100,
@@ -534,6 +536,15 @@ struct _NT_factory
      * The size of buff is guaranteed to be at least kNT_parameterStringSize bytes.
 	 */
 	int 			(*parameterString)( _NT_algorithm* self, int p, int v, char* buff );
+
+	/*
+	 * Called by the host to access the buffer maintained by the algorithm
+	 * for a parameter of type kNT_unitString. The host does not retain the pointer;
+	 * this function is called whenever it needs to access it.
+	 * The plug-in should set buff to a pointer to the buffer,
+	 * and return the size of the buffer.
+	 */
+	int				(*stringParameterBuffer)( _NT_algorithm* self, int p, char*& buff );
 };
 
 extern "C" {
