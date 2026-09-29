@@ -596,6 +596,11 @@ void		NT_updateParameterDefinition( uint32_t algorithmIndex, uint32_t parameterI
  */
 void		NT_updateParameterPages( uint32_t algorithmIndex );
 
+/*
+ * Call to request that the host calls setupUi() on the currently displayed algorithm.
+ */
+void		NT_requestSetupUi(void);
+
 // drawing - use from within draw() only
 //
 
