@@ -25,7 +25,7 @@ SOFTWARE.
 #ifndef _DISTINGNT_FILE_H
 #define _DISTINGNT_FILE_H
 
-#include <stdint.h>
+#include <cstddef>
 #include <distingnt/api.h>
 
 extern "C" {
