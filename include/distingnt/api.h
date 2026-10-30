@@ -378,6 +378,17 @@ struct _NT_uiData
 };
 
 /*
+ * Structure used with NT_sendLargeMidiSysEx().
+ */
+struct _NT_sendLargeSysExRequest
+{
+	uint32_t	destination;
+	void		(*fetchCallback)( void* callbackData, const uint8_t*& data, uint32_t& count, bool& end );
+	void		(*completeCallback)( void* callbackData );
+	void* 		callbackData;
+};
+
+/*
  * Type used for stereo audio frames.
  */
 typedef float _NT_frame[2];
@@ -648,6 +659,12 @@ void		NT_sendMidi3ByteMessage( uint32_t destination, uint8_t b0, uint8_t b1, uin
 // NT_sendMidiSysEx() may be called repeatedly with partial messages, with 'end' set to false.
 // Set 'end' to true for the final call. You do not need to include the 0xF7 byte to end the SysEx message.
 void		NT_sendMidiSysEx( uint32_t destination, const uint8_t* data, uint32_t count, bool end );
+
+// Sends a large System Exclusive message on a background task.
+// The task will repeatedly call request.fetchCallback(), which expects the same data as NT_sendMidiSysEx().
+// When the final call is made, with 'end' set to 'true', the task will call request.completeCallback() when the
+// data is sent.
+void		NT_sendLargeMidiSysEx( _NT_sendLargeSysExRequest& request );
 
 }
 
