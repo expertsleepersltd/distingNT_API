@@ -46,8 +46,9 @@ enum _NT_version
 	kNT_apiVersion12,				// Add parameterString(). Compatible with v4-11.
 	kNT_apiVersion13,				// Add bus count constants, and NT_updateParameterPages(). Compatible with v4-12.
 	kNT_apiVersion14,				// Add kNT_unitString and stringParameterBuffer(). Compatible with v4-13.
+	kNT_apiVersion15,				// Add audioWorkerStackSize and NT_audioWorkerSubmit(). Compatible with v4-14.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion14
+	kNT_apiVersionCurrent 		= kNT_apiVersion15
 };
 
 /*
@@ -556,6 +557,17 @@ struct _NT_factory
 	 * and return the size of the buffer.
 	 */
 	int				(*stringParameterBuffer)( _NT_algorithm* self, int p, char*& buff );
+
+	/*
+	 * If the plug-in specifies a non-zero value for audioWorkerStackSize,
+	 * it may call NT_audioWorkerSubmit().
+	 * This allocation is added to the plug-in's requirements by the host - the plug-in
+	 * does not need to include it in calculateRequirements().
+	 * The specified size (in bytes) should cover the requirements of the worker callbacks.
+	 * A small additional amount is added by the host to cover stack usage before
+	 * the worker is called.
+	 */
+	uint32_t		audioWorkerStackSize;
 };
 
 extern "C" {
@@ -665,6 +677,17 @@ void		NT_sendMidiSysEx( uint32_t destination, const uint8_t* data, uint32_t coun
 // When the final call is made, with 'end' set to 'true', the task will call request.completeCallback() when the
 // data is sent.
 void		NT_sendLargeMidiSysEx( _NT_sendLargeSysExRequest& request );
+
+/*
+ * Called by plug-ins to submit a worker job. May only be called if audioWorkerStackSize was given.
+ * The job is placed on a queue, served by a low priority background task.
+ * Typically this will be called inside a plug-in's step(), though it may be called from anywhere.
+ * The data passed to NT_audioWorkerSubmit() will be passed back to the worker callback.
+ *
+ * Returns boolean success. If this method returns false, job has not been queued and
+ * the callback will not be called.
+ */
+bool		NT_audioWorkerSubmit( void (*workerCB)( _NT_algorithm* alg, uint32_t data ), uint32_t algorithmIndex, uint32_t data );
 
 }
 
