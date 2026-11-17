@@ -96,6 +96,31 @@ public:
 	bool	string( const char*& str );
 	bool	boolean( bool& v );
 	bool	null(void);
+
+	// The following allow arrays and objects to be parsed without knowing the number of elements in advance, e.g.
+	//
+	//	if ( !parse.beginObject() )
+	//		return false;
+	//	while ( parse.more() )
+	//	{
+	//		if ( parse.matchName( "x" ) )
+	//		{
+	//			if ( !parse.number( x ) )
+	//				return false;
+	//		}
+	//		else if ( !parse.skipMember() )
+	//			return false;
+	//	}
+	//
+	// Start parsing an array. Returns false if current token is not an array.
+	bool	beginArray(void);
+	// Start parsing an object. Returns false if current token is not an object.
+	bool	beginObject(void);
+	// Returns true if there is another element (or member) in the current array (or object).
+	// Returns false at the end, and moves past it.
+	bool	more(void);
+	// Skip a value, e.g. an array element. Returns false on failure.
+	bool	skipValue(void);
 };
 
 #endif // _DISTINGNT_SERIALISATION_H

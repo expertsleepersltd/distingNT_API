@@ -47,8 +47,9 @@ enum _NT_version
 	kNT_apiVersion13,				// Add bus count constants, and NT_updateParameterPages(). Compatible with v4-12.
 	kNT_apiVersion14,				// Add kNT_unitString and stringParameterBuffer(). Compatible with v4-13.
 	kNT_apiVersion15,				// Add audioWorkerStackSize and NT_audioWorkerSubmit(). Compatible with v4-14.
+	kNT_apiVersion16,				// Add _NT_jsonParse beginArray(), beginObject(), more(), and skipValue(). Compatible with v4-15.
 
-	kNT_apiVersionCurrent 		= kNT_apiVersion15
+	kNT_apiVersionCurrent 		= kNT_apiVersion16
 };
 
 /*
